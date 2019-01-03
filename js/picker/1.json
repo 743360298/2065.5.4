@@ -1,0 +1,181 @@
+{
+  "succeeded": true,
+  "data": [{
+    "memberinfo": {
+      "id": 2,
+      "onlyid": "154261732250",
+      "cover": "https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/ECpPeGl6icrdM02KeBbE9Ldwq3GLurVwic7RFk51XaGmWGZapkQYsCmVYSREEicQibjb685YiblSbKvG9jl4ic4t44TQ\/132",
+      "nickname": "Huang",
+      "type": "no focus"
+    },
+    "message": {
+      "id": 31,
+      "byUserId": 2,
+      "content": "...1",
+      "type": "video",
+      "videoUrl": {
+        "time": 15.4,
+        "url": "cutevideocdn.zf-nt.com\/1.mp4"
+      },
+      "imageUrl": null,
+      "ait": null,
+      "topic": null,
+      "createAt": "2018-11-23 15:50:41",
+      "praiseNum": 1,
+      "praiseType": "no praise"
+    },
+    "comment": [{
+      "id": 7,
+      "byUserId": 3,
+      "content": "和我的长得很像啊！",
+      "createAt": "2018-11-28 18:22:03",
+      "praiseNum": null,
+      "num": 0,
+      "praise": "no praise",
+      "memberInfo": {
+        "id": 3,
+        "nickname": "百岁山",
+        "cover": "https:\/\/cuteimagecdn.zf-nt.com\/tmp\/wxde80973c0d9c9af0.o6zAJs3Lwjtza26OVV_dugBFl_8A.2rhNLKZuH6Wj7c75d49c0ed72297f62ee11d2be2f0ab.png"
+      }
+    }, {
+      "id": 9,
+      "byUserId": 3,
+      "content": "看破红尘了，哈哈哈",
+      "createAt": "2018-11-29 17:42:18",
+      "praiseNum": null,
+      "num": 0,
+      "praise": "no praise",
+      "memberInfo": {
+        "id": 3,
+        "nickname": "百岁山",
+        "cover": "https:\/\/cuteimagecdn.zf-nt.com\/tmp\/wxde80973c0d9c9af0.o6zAJs3Lwjtza26OVV_dugBFl_8A.2rhNLKZuH6Wj7c75d49c0ed72297f62ee11d2be2f0ab.png"
+      }
+    }, {
+      "id": 18,
+      "byUserId": 3,
+      "content": "忧郁啊~",
+      "createAt": "2018-12-03 11:21:14",
+      "praiseNum": null,
+      "num": 0,
+      "praise": "no praise",
+      "memberInfo": {
+        "id": 3,
+        "nickname": "百岁山",
+        "cover": "https:\/\/cuteimagecdn.zf-nt.com\/tmp\/wxde80973c0d9c9af0.o6zAJs3Lwjtza26OVV_dugBFl_8A.2rhNLKZuH6Wj7c75d49c0ed72297f62ee11d2be2f0ab.png"
+      }
+    }]
+  }, {
+    "memberinfo": {
+      "id": 2,
+      "onlyid": "154261732250",
+      "cover": "https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/ECpPeGl6icrdM02KeBbE9Ldwq3GLurVwic7RFk51XaGmWGZapkQYsCmVYSREEicQibjb685YiblSbKvG9jl4ic4t44TQ\/132",
+      "nickname": "Huang",
+      "type": "no focus"
+    },
+    "message": {
+      "id": 32,
+      "byUserId": 2,
+      "content": "...2",
+      "type": "video",
+      "videoUrl": {
+        "time": 52.383333,
+        "url": "cutevideocdn.zf-nt.com\/2.mp4"
+      },
+      "imageUrl": null,
+      "ait": null,
+      "topic": null,
+      "createAt": "2018-11-23 15:51:22",
+      "praiseNum": 1,
+      "praiseType": "no praise"
+    },
+    "comment": [{
+      "id": 5,
+      "byUserId": 3,
+      "content": "666",
+      "createAt": "2018-11-28 16:23:09",
+      "praiseNum": null,
+      "num": 0,
+      "praise": "no praise",
+      "memberInfo": {
+        "id": 3,
+        "nickname": "百岁山",
+        "cover": "https:\/\/cuteimagecdn.zf-nt.com\/tmp\/wxde80973c0d9c9af0.o6zAJs3Lwjtza26OVV_dugBFl_8A.2rhNLKZuH6Wj7c75d49c0ed72297f62ee11d2be2f0ab.png"
+      }
+    }, {
+      "id": 6,
+      "byUserId": 3,
+      "content": "厉害了，哈哈哈哈",
+      "createAt": "2018-11-28 16:58:55",
+      "praiseNum": null,
+      "num": 0,
+      "praise": "no praise",
+      "memberInfo": {
+        "id": 3,
+        "nickname": "百岁山",
+        "cover": "https:\/\/cuteimagecdn.zf-nt.com\/tmp\/wxde80973c0d9c9af0.o6zAJs3Lwjtza26OVV_dugBFl_8A.2rhNLKZuH6Wj7c75d49c0ed72297f62ee11d2be2f0ab.png"
+      }
+    }, {
+      "id": 8,
+      "byUserId": 3,
+      "content": "哈哈哈哈哈哈",
+      "createAt": "2018-11-29 17:39:10",
+      "praiseNum": null,
+      "num": 0,
+      "praise": "no praise",
+      "memberInfo": {
+        "id": 3,
+        "nickname": "百岁山",
+        "cover": "https:\/\/cuteimagecdn.zf-nt.com\/tmp\/wxde80973c0d9c9af0.o6zAJs3Lwjtza26OVV_dugBFl_8A.2rhNLKZuH6Wj7c75d49c0ed72297f62ee11d2be2f0ab.png"
+      }
+    }]
+  }, {
+    "memberinfo": {
+      "id": 2,
+      "onlyid": "154261732250",
+      "cover": "https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/ECpPeGl6icrdM02KeBbE9Ldwq3GLurVwic7RFk51XaGmWGZapkQYsCmVYSREEicQibjb685YiblSbKvG9jl4ic4t44TQ\/132",
+      "nickname": "Huang",
+      "type": "no focus"
+    },
+    "message": {
+      "id": 28,
+      "byUserId": 2,
+      "content": "阳光真他娘的暖啊，你在吗，我的在的",
+      "type": "image",
+      "videoUrl": null,
+      "imageUrl": ["cuteimagecdn.zf-nt.com\/3.png", "cuteimagecdn.zf-nt.com\/4.png", "cuteimagecdn.zf-nt.com\/5.png", "cuteimagecdn.zf-nt.com\/6.png", "cuteimagecdn.zf-nt.com\/7.png"],
+      "ait": null,
+      "topic": null,
+      "createAt": "2018-11-23 11:38:08",
+      "praiseNum": 0,
+      "praiseType": "no praise"
+    },
+    "comment": [{
+      "id": 10,
+      "byUserId": 3,
+      "content": "sixsixsix",
+      "createAt": "2018-11-29 17:46:56",
+      "praiseNum": null,
+      "num": 0,
+      "praise": "no praise",
+      "memberInfo": {
+        "id": 3,
+        "nickname": "百岁山",
+        "cover": "https:\/\/cuteimagecdn.zf-nt.com\/tmp\/wxde80973c0d9c9af0.o6zAJs3Lwjtza26OVV_dugBFl_8A.2rhNLKZuH6Wj7c75d49c0ed72297f62ee11d2be2f0ab.png"
+      }
+    }, {
+      "id": 19,
+      "byUserId": 3,
+      "content": "搞笑",
+      "createAt": "2018-12-04 09:50:19",
+      "praiseNum": null,
+      "num": 0,
+      "praise": "no praise",
+      "memberInfo": {
+        "id": 3,
+        "nickname": "百岁山",
+        "cover": "https:\/\/cuteimagecdn.zf-nt.com\/tmp\/wxde80973c0d9c9af0.o6zAJs3Lwjtza26OVV_dugBFl_8A.2rhNLKZuH6Wj7c75d49c0ed72297f62ee11d2be2f0ab.png"
+      }
+    }]
+  }],
+  "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6OCwiaWF0IjoiMjAxOC0xMi0wNiAyMTo0OToxNyIsInN0cmluZyI6ImlrcXN5QkdISk1PVVdYMDgifQ.DUWffLKmOc3KvPvV6gb5KUw4Uzu5xcWm0fWjpDhB5t0"
+}

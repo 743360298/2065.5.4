@@ -165,7 +165,7 @@
           <img src="../images/mipmap-xhdpi/icon_contacts.png" alt="">
         </button>
         <!-- <a  href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-bars mui-pull-left"></a> -->
-        <div  class="mui-icon mui-action-menu headImgSetBtn mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-left headImg">
+        <div  class="mui-icon mui-action-menu headImgSetBtn mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-left headImg headImgInfo">
           <img src="../images/12-1.jpg" alt="">
         </div>
       </header>
@@ -373,7 +373,12 @@
 <script src="../js/info.js"></script>
 
 <script>
-
+  
+  $('.headImgInfo').on('tap',function () { 
+       mui.openWindow({
+    			url: './PersonalInfo.html', //通过URL传参
+    		})
+   })
 
 
   $('.infoListLi').on('tap',function(){

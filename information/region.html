@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+  <link href="../css/mui.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/head.css">
+  <link rel="stylesheet" href="../css/animate.css">
+  <link rel="stylesheet" href="../css/info1.css">
+  <link rel="stylesheet" href="../css/PersonalInfo.css">
+  <script src="../js/jquery-1.12.2.js"></script>
+  <script src="../js/public.js"></script>
+  <link href="../js/picker/mui.picker.css" rel="stylesheet"/>
+  <link href="../js/picker/mui.poppicker.css" rel="stylesheet"/>
+  <style>
+    body{
+      background-color: #f7f7f7;
+    }
+    .mui-icon-back:before, .mui-icon-left-nav:before{
+      color: #333 ;
+    }
+    .PersonalInfoList li a div img{
+      width: 0.22rem ;
+      height: 0.3rem ;
+      margin-left: 0.2rem ;
+    }
+    .PersonalInfoList li a div span{
+      margin-left: 0 ;
+      white-space: nowrap; 
+      font-size: 0.3rem ;
+      color: #333; 
+    }
+    #completeBtn{
+      font-size: 0.3rem ;
+      /* color: #333 ; */
+    }
+    #location{
+      white-space: normal;
+      width: 50% ;
+      display: flex;
+    justify-content: flex-end;
+    line-height: initial;
+      /* margin-left: 0.2rem ; */
+    }
+    </style>
+</head>
+<body>
+  <header id="header" class="mui-bar mui-bar-nav">
+    <h1 class="mui-title">选择所在地区</h1>
+    <a class=" mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <button class="setBtn  mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-right headImg2 " id="completeBtn">
+       完成
+    </button>
+  </header>
+  
+  <div class="mui-content">
+    <ul class="PersonalInfoList">
+      <li  value="xianshi" onclick="showPick()">
+        <a href="javascript:;">
+          <div>
+              <span>当前位置</span>
+              <img src="../images/mipmap-xhdpi/weizhi4.png" alt="">
+          </div>
+          <span id="location">广东-广州</span>
+            <!-- <img src="../images/mipmap-xhdpi/smallarrow.png" alt=""> -->
+        </a>
+      </li>
+    </ul>
+
+     <!-- <div class="mui-content">
+        <input type="button" value="xianshi" onclick="showPick()"/>
+     </div> -->
+        
+    
+  </div>
+
+<script src="../js/picker/mui.min.js"></script>
+<script src="../js/picker/city.data-3.js"></script>
+<script src="../js/picker/mui.poppicker.js"></script>
+<script src="../js/picker/mui.picker.js"></script>
+
+  <script type="text/javascript" charset="utf-8">
+    mui.plusReady(function(){
+     
+     
+    })
+    function showPick(){
+    var picker = new mui.PopPicker({
+      //三级联动
+        layer: 3
+    });
+        picker.setData(cityData3);
+    var adressStr = '';
+    //设置默认选择地址
+    picker.pickers[0].setSelectedIndex(2);
+    picker.pickers[1].setSelectedIndex(1);
+    picker.pickers[2].setSelectedIndex(0);
+    picker.show(function(SelectedItem) {
+      //将选择的省、市、区显示到屏幕上
+        for (var i = 0; i < SelectedItem.length; i++) {
+           adressStr += SelectedItem[i].text;
+          }
+          console.log(adressStr);
+          $('#location').html(adressStr)
+        });
+    }
+    </script>
+    
+  
+</body>
+</html>
