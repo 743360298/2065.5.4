@@ -75,7 +75,7 @@
           </li>
           <li class="mysaid">
             <div class="mysaidTxt">
-              你好么？？？
+              好啊…
             </div>
             <img src="../images/00.png" alt="">
           </li>
@@ -88,8 +88,8 @@
     <footer id="footerInput">
         <div class="inputMethod">
           <div class="switch">
-            <img class="voice keyboard" src="../images/mipmap-xhdpi/icon_keyboard.png" alt="">
-            <img class="voice" src="../images/mipmap-xhdpi/icon_voice.png" alt="">
+            <img class="voice " src="../images/mipmap-xhdpi/icon_keyboard.png" alt="">
+            <img class="voice keyboard" src="../images/mipmap-xhdpi/icon_voice.png" alt="">
           </div>
           <div class="clickVoice">
             <span>按住说话</span>
@@ -97,13 +97,35 @@
           <div class="clickVoice clickKeyboard">
             <input type="text" id="inputKeyboard">
           </div>
-          <div  class="expression"><img src="../images/mipmap-xhdpi/icon_expression.png" alt=""></div>
+          <div  class="expression">
+            <img class="expression1 " src="../images/mipmap-xhdpi/icon_expression.png" alt="">
+            <img class="expression1 expression2" src="../images/mipmap-xhdpi/icon_keyboard.png" alt="">
+          </div>
           <div  class="more "><img src="../images/mipmap-xhdpi/icon_more.png" alt="">
             <div  class=" sendBtn"><span>发送</span></div>
           </div>
           
 
         </div>
+
+        <ul class="browList browList2">
+            <li><a href="javascript:;" ><img src="../images/default/0.gif" alt=""></a></li>
+            <li><a href="javascript:;" ><img src="../images/default/1.gif" alt=""></a></li>
+            <li><a href="javascript:;" ><img src="../images/default/2.gif" alt=""></a></li>
+            <li><a href="javascript:;" ><img src="../images/default/3.gif" alt=""></a></li>
+            <li><a href="javascript:;" ><img src="../images/default/4.gif" alt=""></a></li>
+            <li><a href="javascript:;" ><img src="../images/default/5.gif" alt=""></a></li>
+            <li><a href="javascript:;" ><img src="../images/default/6.gif" alt=""></a></li>
+            <li><a href="javascript:;" ><img src="../images/default/7.gif" alt=""></a></li>
+            <li><a href="javascript:;" ><img src="../images/default/8.gif" alt=""></a></li>
+            <li><a href="javascript:;" ><img src="../images/default/9.gif" alt=""></a></li>
+            <li><a href="javascript:;" ><img src="../images/default/10.gif" alt=""></a></li>
+            <li><a href="javascript:;" ><img src="../images/default/11.gif" alt=""></a></li>
+            <li><a href="javascript:;" ><img src="../images/default/12.gif" alt=""></a></li>
+            <li><a href="javascript:;" ><img src="../images/default/13.gif" alt=""></a></li>
+            <li><a href="javascript:;" ><img src="../images/default/14.gif" alt=""></a></li>
+            <li><a href="javascript:;" ><img src="../images/default/2.gif" alt=""></a></li>
+          </ul>
 
 
         <ul class="moreList moreList2">
@@ -157,12 +179,31 @@
   $('.voice').on('click',function(){
     $('.voice').toggleClass('keyboard')
     $('.clickVoice').toggleClass('clickKeyboard')
+    $('.browList').addClass('browList2')
+  })
+  //切换表情
+  $('.expression1').on('click',function(){
+    $('.expression1').toggleClass('expression2')
+    $('.browList').toggleClass('browList2')
+    // $('.voice').toggleClass('keyboard')
+    // $('.clickVoice').toggleClass('clickKeyboard')
+    // if($('.voice').hasClass('keyboard')){
+    //   $('.voice').toggleClass('keyboard')
+    //   console.log('addClass');
+    // }
+    if(!$('.moreList').hasClass('moreList2')){
+      $('.moreList').addClass('moreList2')
+    }
+    // voice keyboard
   })
 
   // 显示更多
   $('.more').on('click',function(){
     $('.moreList').toggleClass('moreList2')
-    // $('.moreList').removeClass('moreList')
+    if(!$('.browList').hasClass('browList2')){
+      $('.browList').addClass('browList2')
+    }
+    // $('.browList').removeClass('browList2')
     // if( $('.moreList').hasClass('moreList2') ){
     //     console.log('显示');
     //   $('.more').on('click',function(){
