@@ -21,7 +21,7 @@ data = [
   {
     href: './ChatRecord.html',
     images: '../images/12-1.jpg',
-    friendName: ' 阿里斯加',
+    friendName: '阿拉斯加',
     friendTime: '18:20',
     friendName2: '吃饭睡觉打豆豆',
     friendInfo: '99+',
