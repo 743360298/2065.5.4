@@ -348,19 +348,27 @@ $('.addBtn').on('click',function () {
   window.location.href = "../circle/publish.html";
 })
 
+
 // 点赞
 $('.praise').on('click',function () {
   // $('.likeBtn').toggleClass('likeBtn2');
   $(this).children().toggleClass('likeBtn2');
-  $(this).children().siblings('span').toggleClass('likeSpan');
+  // $(this).parent().next().children().siblings('span').toggleClass('likeSpan');
+  // console.log($(this).parent().next().children().siblings('span'));
+  
+  // $(this).parent().next().toggle(',<span>金毛</span>')
+  
   // 判断
   if ($(this).children().hasClass('likeBtn2')) {
-    $('.friendPraise').append(',<span>金毛</span>')
-    console.log('add');
-        } else { 
-            $('.friendPraise').pop(',<span>金毛</span>')
-    console.log('del');
-        }
+      // $('.friendPraise').append(',<span>金毛</span>')
+       $(this).parent().next().append(',<span>金毛</span>')
+      //  console.log(this);
+       console.log('add');
+      // $(this).parent().next().toggle(',<span>金毛</span>')
+    }else{ 
+      $(this).parent().next().hide(',<span>金毛</span>')
+      console.log('pop');
+    }
   
   
 })

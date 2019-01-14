@@ -276,6 +276,7 @@ li {
 
 .commentBox .Point .praise {
   display: flex;
+  align-items: center ;
 }
 
 .commentBox .Point .praise span {
@@ -301,6 +302,7 @@ li {
 .commentBox .Point .comment {
   margin-left: 0.4rem;
   display: flex;
+  align-items: center;
 }
 
 .commentBox .Point .comment span {

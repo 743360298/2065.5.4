@@ -127,19 +127,19 @@
                 <span>信用分</span>
                 <img src="../images/mipmap-xhdpi/smallarrow.png" alt="">
               </a></li>
-              <li><a href="javascript:;">
+              <li><a href="./PersonalDynamic.html">
                 <span>个人动态</span>
                 <img src="../images/mipmap-xhdpi/smallarrow.png" alt="">
               </a></li>
-              <li><a href="javascript:;">
+              <li><a href="./strategy.html">
                 <span>我的攻略</span>
                 <img src="../images/mipmap-xhdpi/smallarrow.png" alt="">
               </a></li>
-              <li><a href="javascript:;">
+              <li><a href="./coupons.html">
                 <span>优惠券</span>
                 <img src="../images/mipmap-xhdpi/smallarrow.png" alt="">
               </a></li>
-              <li><a href="javascript:;">
+              <li><a href="./collection.html">
                 <span>我的收藏</span>
                 <img src="../images/mipmap-xhdpi/smallarrow.png" alt="">
               </a></li>
@@ -379,7 +379,19 @@
     			url: './PersonalInfo.html', //通过URL传参
     		})
    })
+  $('.menuSet').on('tap',function () { 
+       mui.openWindow({
+    			url:  './set.html' 
+    		})
+   })
 
+  // 修改头像
+  $('.menuHeadImg').on('tap',function () {
+    console.log('修改头像');
+    mui.openWindow({
+    	url: 'picture.html', //通过URL传参
+    })
+  })
 
   $('.infoListLi').on('tap',function(){
     console.log('跳转页面');
@@ -400,7 +412,7 @@
   $('.h_del').on('tap',function(){
     event.stopPropagation()
     console.log('删除'); 
-    $(this).parent().parent().slideUp(50, function () {
+     $(this).parent().parent().slideUp(50, function () {
      $(this).remove();
     });
     // $('.delBounced').show(200);

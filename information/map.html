@@ -1,46 +1,145 @@
 <!doctype html>
 <html>
+
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
-    <title>关键字检索</title>
-    <link rel="stylesheet" href="https://cache.amap.com/lbs/static/main1119.css"/>
-    <style type="text/css">
-        #panel {
-            position: absolute;
-            background-color: white;
-            max-height: 90%;
-            overflow-y: auto;
-            top: 10px;
-            right: 10px;
-            width: 280px;
-        }
-    </style>
-    <script src="https://webapi.amap.com/maps?v=1.4.10&key=e21475127b4797b53b68350988df29cc "></script>
-    <script type="text/javascript" src="https://cache.amap.com/lbs/static/addToolbar.js"></script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+  <title>位置经纬度 + 驾车规划路线</title>
+  <style type="text/css">
+    html,
+    body,
+    #container {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+  <style type="text/css">
+    body,
+    html,
+    #allmap {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      margin: 0;
+      font-family: "微软雅黑";
+    }
+
+    .position-map .outset {
+      width: 170px;
+      min-height: 20px;
+      vertical-align: middle;
+    }
+
+    .position-map .input {
+      display: block;
+      margin-top: 10px;
+    }
+
+    textarea,
+    input[type="text"],
+    input[type="password"],
+    input[type="search"] {
+      padding: 15px 8px;
+      line-height: 1;
+      height: 18px;
+      border: 1px solid #ddd;
+      background-color: #fff;
+      transition: border linear .2s, box-shadow linear .2s;
+      vertical-align: middle;
+    }
+
+    .position-map .btn {
+      margin-left: 5px;
+      vertical-align: middle;
+    }
+
+    .btn {
+      display: inline-block;
+      border: 0;
+      text-align: center;
+      background: #0089e1;
+      color: #fff;
+      min-height: 34px;
+      line-height: 34px;
+      padding: 0 15px;
+      -webkit-transition: background .3s, border .3s;
+      transition: background .3s, border .3s;
+    }
+  </style>
+  <link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css" />
+  <script src="https://a.amap.com/jsapi_demos/static/demo-center/js/demoutils.js"></script>
+  <script src="https://webapi.amap.com/maps?v=1.4.10&key=e21475127b4797b53b68350988df29cc "></script>
+  <script type="text/javascript" src="https://cache.amap.com/lbs/static/addToolbar.js"></script>
 </head>
+
 <body>
-<div id="container"></div>
-<div id="panel"></div>
-<script type="text/javascript">
-    var map = new AMap.Map("container", {
-        resizeEnable: true
-    });
-    AMap.service(["AMap.PlaceSearch"], function() {
-        //构造地点查询类
-        var placeSearch = new AMap.PlaceSearch({ 
-            pageSize: 5, // 单页显示结果条数
-            pageIndex: 1, // 页码
-            city: "010", // 兴趣点城市
-            citylimit: true,  //是否强制限制在设置的城市内搜索
-            map: map, // 展现结果的地图实例
-            panel: "panel", // 结果列表将在此容器中进行展示。
-            autoFitView: true // 是否自动调整地图视野使绘制的 Marker点都处于视口的可见范围
-        });
-        //关键字查询
-        placeSearch.search('北京大学');
-    });
-</script>
+  <div class="position-map" id="position-map" style="height:100%;">
+  </div>
+
+
+  <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.4"></script>
+  <script>
+    //<![CDATA[
+    var pointer = new BMap.Point(113.329817, 23.112018);
+    var hotelName = "地址标题";
+    var hotelAddr = "地址详细描述";
+    var gc = new BMap.Geocoder();
+    var map = new BMap.Map("position-map");
+    map.enableScrollWheelZoom();
+    map.addControl(new BMap.NavigationControl());
+    map.addControl(new BMap.MapTypeControl({
+      mapTypes: [BMAP_NORMAL_MAP, BMAP_HYBRID_MAP]
+    }));
+    init(pointer);
+
+    function init(pointer) {
+      var marker = new BMap.Marker(pointer);
+      var licontent =
+        "<img style='margin-top:14px'  src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1531034581&di=912a3e3f33a10d3f2cf6ca430c0d2fdf&imgtype=jpg&er=1&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F010d235541a95a000001a64bdade4d.jpg' width='300' height='40' title='天安门'/></br><b>" +
+        hotelName + "</b><br>";
+      licontent += "<span><strong>地址：</strong>" + hotelAddr + "</span><br>";
+      licontent +=
+        "<span class=\"input\"><strong></strong><input class=\"outset\" type=\"text\" name=\"origin\" value=\"\"/><button class=\"btn\" type=\"button\" value=\"公交\" onclick=\"gotobaidu(1)\">公交</button><button class=\"btn\" type=\"button\"  onclick=\"gotobaidu(1)\"/>驾车</button><a href=\"url=\"http://api.map.baidu.com/direction?destination=latlng:" +
+        marker.getPosition().lat + "," + marker.getPosition().lng + "|name:" + hotelName +
+        "rion=广州市&output=html\" target=\"_blank\"></a></span>";
+      var hiddeninput =
+        "<input type=\"hidden\" value=\"广州市\" name=\"region\" /><input type=\"hidden\" value=\"html\" name=\"output\" /><input type=\"hidden\" value=\"driving\" name=\"mode\" /><input type=\"hidden\" value=\"latlng:" +
+        marker.getPosition().lat + "," + marker.getPosition().lng + "|name:" + hotelName + "\" name=\"destination\" />";
+      var content1 =
+        "<form id=\"gotobaiduform\" action=\"http://api.map.baidu.com/direction\" target=\"_blank\" method=\"get\">" +
+        licontent + hiddeninput + "</form>";
+      var opts1 = {
+        width: 300,
+        height: 150
+      };
+      var infoWindow = new BMap.InfoWindow(content1, opts1);
+
+      map.centerAndZoom(pointer, 18);
+      map.addOverlay(marker);
+      marker.openInfoWindow(infoWindow);
+      marker.addEventListener('click', function () {
+        marker.openInfoWindow(infoWindow);
+      });
+    }
+
+    function gotobaidu(type) {
+      if ($.trim($("input[name=origin]").val()) == "") {
+        alert("请输入起点！");
+        return;
+      } else {
+        if (type == 1) {
+          $("input[name=mode]").val("transit");
+          $("#gotobaiduform")[0].submit();
+        } else if (type == 2) {
+          $("input[name=mode]").val("driving");
+          $("#gotobaiduform")[0].submit();
+        }
+      }
+    }
+    //]]>
+  </script>
+
 </body>
+
 </html>

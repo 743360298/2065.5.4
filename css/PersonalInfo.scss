@@ -46,3 +46,519 @@
     border-bottom: 0px   transparent solid;
   }
 }
+
+.strategyList{
+  position: relative;
+  li{
+    width: 100%; 
+    height: 5.2rem ;
+    padding: 0.25rem ;
+    background-color: #fff;
+    margin-bottom: 0.2rem ;
+    a{
+      width: 100%; 
+      height: 100% ;
+      .strategyItem{
+        position: relative;
+        img{
+          width: 100% ;
+          height: 4rem  ;
+          border-radius: 0.1rem ;
+          // position: absolute;
+          top: 0 ;
+          left: 0;
+          z-index: 1;
+        }
+        .strategytitle{
+          position: absolute;
+          top: 0 ;
+          left: 0;
+          z-index: 9;
+          color: #fff;
+          font-size: 0.4rem ;
+          // margin-top: 0.4rem ;
+          padding: 0.3rem 0.4rem ;
+        }
+      }
+      .strategyComments{
+        height: 0.8rem ;
+        display: flex ;
+        align-items: center ;
+        justify-content: flex-end; 
+        div{
+          display: flex ;
+          align-items: center ;
+          color: #333 ;
+          font-size: 0.26rem ;
+          margin-left: 0.4rem ;
+          img{
+            width: 0.4rem ;
+            height: 0.36rem ;
+            margin-right: 0.1rem ;
+          }
+        }
+      }
+    }
+  }
+  
+}
+.strategyNull,.collectionNull{
+  position: absolute ;
+  top: 50% ;
+  left: 50% ;
+  transform: translate(-50%, -50%);
+  display: flex ;
+  flex-direction: column ;
+  justify-content: center ;
+  // opacity: 0;
+  display: none;
+  img{
+    width: 3rem ;
+    height: 3rem ;
+    display: flex ;
+    justify-content: center ;
+    margin: 0 auto;
+  }
+  span{
+    color: #828282;
+    font-size: 0.4rem ;
+    display: flex ;
+    justify-content: center ;
+    margin-top: 0.2rem ;
+    white-space: nowrap;  /*强制span不换行*/
+  }
+}
+
+
+.collectionNav{
+  height: 0.8rem ;
+  width: 100% ;
+  background:rgba(255,255,255,1);
+  display: flex ;
+  span{
+    color: #333333 ;
+    font-size: 0.3rem ;
+    display: flex ;
+    align-items: center ;
+    justify-content: center ;
+    width: 50% ;
+    font-weight:400;
+  }
+  .active{
+    color: #4EA3F9 ;
+    position: relative;
+    &::after{
+      content: "";
+      display: block;
+      height: 0.06rem ;
+      background:  #4EA3F9 ;
+      width: 100% ;
+      position: absolute;
+      left: 0;
+      bottom: 0 ;
+    }
+  }
+}
+.collectionList{
+  margin-top: 0.2rem ;
+  position: relative; 
+  li{
+    background-color: #fff;
+    height: 2.1rem ;
+    border-bottom: 0.02rem solid #f7f7f7 ;
+    position: relative; 
+    overflow: hidden;
+    // padding: 0.25rem ;
+    a{
+      display: block ;
+      width: 100% ;
+      height: 100%;
+      height: 2.1rem ;
+      padding: 0.25rem ;
+      position: relative;
+      .collectionItem{
+        display: flex ;
+        img{
+          width: 1.5rem;
+          height: 1.5rem ;
+        }
+        .collectionTxt{
+          display: flex ;
+          flex-direction: column ;
+          margin-left: 0.25rem ;
+          span{
+            color: #333333;
+            font-size: 0.3rem ;
+            font-weight:bold;
+            line-height: initial;
+          }
+          :last-child {
+            font-size: 0.28rem ;
+            font-weight:400;
+          }
+        }
+      }
+    }
+  }
+}
+.h_left {
+  transform: translateX(-2rem);
+}
+.h_del{
+  position: absolute;
+  top : 0 ;
+  right: -4rem ;
+  margin: 0;
+  padding: 0;
+  z-index: 99;
+  float: left;
+  width: 2rem;
+  height: 1.5rem ;
+  background-color: #E64240 !important;
+  color: #fff;
+  font-size: 0.3rem ;
+  line-height: 1.5rem ;
+  text-align: center;
+}
+.h_top{
+  background-color: #ccc !important;
+  position: absolute;
+  top : 0 ;
+  right: -2rem ;
+  margin: 0;
+  padding: 0;
+  z-index: 99;
+  float: left;
+  width: 2rem;
+  height: 1.5rem ;
+  color: #fff;
+  font-size: 0.3rem ;
+  line-height: 1.5rem ;
+  text-align: center;
+}
+
+// 优惠券
+#commentsBtn{
+  color: #333 ;
+  font-size:  0.28rem ;
+  border: 0;
+  background-color: transparent;
+  outline: none;
+}
+.noUse,.hasUsed{
+  li{
+    width: 100% ;
+    height: 2.9rem;
+    a{
+      width: 100% ;
+      height: 100% ;
+      .noUseItem{
+        background-image: url('../images/youhuiquan.png');
+        background-size: 100% 100% ;
+        padding: 0.45rem 0.6rem 0.45rem 0.45rem;
+        display: flex ;
+        img{
+          width: 2rem;
+          height: 2rem;
+          margin-right: 0.2rem;
+        }
+        .noUseRight{
+          display: flex ;
+          flex-direction: column ;
+          justify-content: space-between ;
+          width: 100% ;
+        }
+        span{
+          i{
+            color: #4EA3F9 !important;
+            font-size: 0.3rem ;
+            font-style:normal;
+            font-weight: normal !important;
+          }
+        }
+        :nth-child(1){
+          font-size: 0.3rem ;
+          color: #333 ;
+          font-weight:bold;
+        }
+        :nth-child(2){
+          font-size: 0.26rem ;
+          color: #333 ;
+          font-weight:400;
+        }
+        :nth-child(3){
+          font-size: 0.26rem ;
+          color: #333 ;
+          font-weight:400;
+        }
+        :nth-child(5){
+          font-size: 0.24rem ;
+          color: #828282 ;
+        }
+        .divider{
+          width: 100% ;
+          height: 0.01rem;
+          // background-color: pink;
+          border-bottom: 0.03rem dotted rgba(220,220,220,1);;
+        }
+      }
+    }
+  }
+  li:nth-child(1){
+    opacity: 1;
+  }
+  li:nth-child(2){
+    opacity: 0.7;
+  }
+  li:nth-child(3){
+    opacity: 0.4;
+  }
+  li:nth-child(4){
+    opacity: 0.4;
+  }
+}
+.hasUsed{
+  li{
+    opacity: 0.4 !important;
+  }
+}
+
+// 优惠券详情
+.BarCode{
+  width: 100%;
+  padding: 0.25rem ;
+  display: flex ;
+  flex-direction: column ;
+  justify-content: center ;
+  img{
+    height: 1.8rem;
+    width: 100%;
+    margin-bottom: 0.25rem ;
+  }
+  span{
+    color: #828282 ;
+    font-size: 0.28rem ;
+    text-align: center ;
+  }
+}
+
+.textareaBox{
+  padding:0.2rem  0.25rem ;
+  // height: 2.5rem ;
+  // margin-top: 0.2rem ;
+  // background-color: #fff;
+  textarea{
+    margin: 0;
+    padding: 0;
+    // text-indent: 0.2rem ;
+    height: 2.5rem ;
+    font-size: 0.3rem ;
+    line-height: initial;
+    border: transparent ;
+    padding: 0.2rem ;
+  }
+}
+.textareaBox textarea::-webkit-input-placeholder {
+  color: #6b6b6b;
+}
+.addPhoto{
+  width: 2.26rem ;
+  height: 2.26rem ;
+  display: flex;
+  flex-direction: column ;
+  align-items: center ;
+  justify-content: center ;
+  flex-direction: column ;
+  background-color: #fff;
+  margin-left: 0.25rem ;
+  div{
+    display: flex;
+    flex-direction: column ;
+    align-items: center ;
+    justify-content: center ;
+    img{
+      width: 0.9rem ;
+      height: 0.72rem ;
+      margin-bottom: 0.15rem ;
+    }
+    span{
+      color: #828282 ;
+      font-size: 0.26rem ;
+    }
+  }
+
+}
+.share{
+  padding: 0.25rem ;
+  display: flex ;
+  align-items: center ;
+  span{
+    color: #828282 ;
+    font-size: 0.28rem ;
+  }
+}
+.shareActive{
+  width: 0.35rem ;
+  height: 0.35rem ;
+  display: none;
+  margin-right: 0.2rem ;
+}
+.shareActive2{
+  display: block;
+}
+
+.release{
+  padding: 0.25rem ;
+}
+#releaseBtn{
+  width: 100%;
+  height: 0.98rem ;
+  background:rgba(78,163,249,1);
+  opacity:0.5;
+  border-radius:0.1rem ;
+  color: #FDFDFD ;
+  font-size: 0.3rem ;
+}
+
+
+// 动态
+.PhotoAlbum{
+  width: 100%;
+  height: 5rem ;
+  position: relative;
+}
+.PhotoAlbum img{
+  width: 100%;
+  height: 100% ;
+}
+.hearderInfo{
+  display: flex ;
+  flex-direction: column ;
+  /* align-items: center ; */
+  justify-content: flex-end; 
+  position: absolute;
+  bottom:  -1.1rem  ;
+  right: 0.25rem ;
+}
+.hearderInfo div{
+  display: flex ;
+  align-items: center ;
+  justify-content: flex-end; 
+  /* flex-direction: column ; */
+}
+.hearderImg{
+  width: 2rem ;
+  height: 2rem ;
+  padding: 0.08rem  ;
+  background-color: #f7f7f7;
+  border: #bfbfbf solid 0.01rem ;
+  margin-left: 0.3rem ;
+}
+.hearderImg img{
+  width: 100% ;
+  height: 100% ;
+  margin: 0;
+  padding: 0;
+}
+.hearderInfo div span{
+ font-size: 0.4rem ;
+ color: #fff  ;
+ text-shadow: 0.02rem  0.02rem  0.02rem  #949494 ;
+}
+.hearderInfo>span{
+  font-size: 0.3rem ;
+  color: #808080;
+  font-weight: 400;
+  margin-top: 0.1rem ;
+  line-height: initial ;
+}
+.dynamic{
+  margin-top: 1.8rem ;
+  padding: 0 0.25rem ;
+}
+.Today{
+  display: flex ;
+}
+.Today>div{
+  width: 2.2rem;
+  height: 2.2rem ;
+  background-color: #575757;
+  display: flex ;
+  align-items: center ;
+  justify-content: center ;
+  // margin-left: 0.25rem ;
+}
+.Today>div img{
+  width: 1.25rem;
+  height: 1.05rem;
+  margin: 0 auto;
+  line-height: 2.2rem;
+}
+.Today>span{
+  font-size: 0.8rem ;
+  font-weight: 500;
+  line-height: initial;
+  width: 2rem;
+}
+
+.dynamicList{
+  li{
+    margin-top: 0.25rem;
+    a{
+      display: flex ;
+      .date{
+        // flex: 1;
+        width: 2rem;
+        height: initial;
+        line-height: initial;
+        color: #000 ;
+        font-size: 0.4rem ;
+        font-weight: 400;
+        white-space:nowrap;
+        i{
+          font-style: normal ;
+          font-size: 0.7rem ;
+          font-weight: 500;
+        }
+      }
+      .dynamicRight{
+        flex: 3;
+        // margin-left: 0.15rem ;
+        display: flex ;
+        .dynamicImgs{
+          width: 2.2rem;
+          height: 2.2rem ;
+          img{
+            width: 50% ;
+            height: 100% ;
+            margin: 0;
+            padding: 0;
+            float: left;
+          }
+          img:nth-child(1){
+            padding-right: 1% ;
+          }
+          img:nth-child(2){
+            padding-left:  1% ;
+          }
+        }
+        .dynamicTxts{
+          flex: 1;
+          display: flex ;
+          flex-direction: column ;
+          justify-content: space-between ;
+          margin-left: 0.18rem ;
+          span{
+            line-height: initial ;
+            font-size: 0.32rem ;
+            color: #000 ;
+            font-weight: 400 ;
+            i{
+              font-style: normal ;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,372 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+  <link href="../css/mui.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/head.css">
+  <link rel="stylesheet" href="../css/info1.css">
+  <link rel="stylesheet" href="../css/info.css">
+  <link rel="stylesheet" href="../css/ChatRecord.css">
+  <link rel="stylesheet" href="../css/PersonalInfo.css">
+  <script src="../js/mui.min.js"></script>
+  <script src="../js/jquery-1.12.2.js"></script>
+  <script src="../js/public.js"></script>
+  <!-- <script src="../js/delete.js"></script> -->
+   <style>
+      .mui-bar .mui-btn-nav.mui-pull-left .mui-icon-left-nav{
+        color:#333 ;
+      }
+      html{
+        background-color: #f7f7f7;
+      }
+      body{
+        background-color: #f7f7f7;
+      }
+      input[type=text]{
+        margin-bottom: 0;
+      }
+
+      #footerInput .moreList2{
+        display: none !important;
+        background-color: #edeef2;
+        height: 2.28rem;
+        width: 100%;
+        padding: 0.4rem;
+        display: flex;
+        justify-content: space-around;
+      }
+      #inputKeyboard{
+        width: 4.8rem ;
+        height: 0.7rem !important;
+        font-size: 0.3rem ;
+        color: #333333;
+        margin-bottom:  0 ;
+      }
+      .mui-bar-nav~.mui-content{
+        padding-bottom: 0.97rem ;
+      }
+      .mui-bar-nav~.mui-content{
+        padding-top: 0 !important;
+      }
+      #header{
+        background: transparent;
+        z-index: 999;
+      }
+      .mui-bar .mui-btn-nav.mui-pull-left .mui-icon-left-nav{
+        color: #f7f7f7;
+      }
+      .mui-bar .mui-btn-nav.mui-pull-left{
+        padding: 0;
+      }
+      /* #header button span{
+        color: #f7f7f7;
+      } */
+      .mui-bar-nav{
+        border-bottom: 0px solid transparent; 
+      }
+      *{
+        box-sizing: border-box;
+      }
+      .dynamicImgs1 img{
+        width: 100% !important;
+        height: 100% !important;
+      }
+      .dynamicImgs3 img{
+        width: 50% !important;
+      }
+      .dynamicImgs3 img:nth-child(2) {
+        padding-bottom: 1% !important;
+        width: 50% !important;
+        height: 50% !important;
+      }
+      .dynamicImgs3 img:nth-child(3){
+        padding-top: 1% !important;
+        width: 50% !important;
+        height: 50% !important;
+      }
+      .dynamicImgs0 {
+        background-color: #dadada;
+        padding: 0.1rem 0;
+      }
+      .dynamicImgs0 .dynamicImgs{
+        display: none;
+      }
+      .dynamicImgs0 .dynamicTxts .togetherNum{
+        display: none;
+      }
+      /* .dynamicImgs4 img{
+        width: 50% !important;
+        height: 50% !important;
+      } */
+      .dynamicImgs4 img:nth-child(1) {
+        padding-bottom: 1% !important;
+        width: 50% !important;
+        height: 50% !important;
+      }
+      .dynamicImgs4 img:nth-child(2) {
+        padding-bottom: 1% !important;
+        width: 50% !important;
+        height: 50% !important;
+      }
+      .dynamicImgs4 img:nth-child(3){
+        padding-top: 1% !important;
+        padding-right: 1% !important;
+        width: 50% !important;
+        height: 50% !important;
+      }
+      .dynamicImgs4 img:nth-child(4){
+        padding-top: 1% !important;
+        padding-left: 1% !important;
+        width: 50% !important;
+        height: 50% !important;
+      }
+      .dynamicImgs4 img:nth-child(5){
+        display: none ;
+      }
+      .dynamicImgs4 img:nth-child(5+n){
+        display: none ;
+      }
+  </style>
+</head>
+<body>
+
+
+    <header id="header" class="mui-bar mui-bar-nav">
+			
+      <!-- <h1 class="mui-title">二哈</h1> -->
+      <button class="mui-action-back mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-left"><span class="mui-icon mui-icon-left-nav headerTxt">我的相册</span></button>
+      <button class="mui-btn mui-btn-blue mui-btn-link mui-pull-right headImg2">
+        <img src="../images/mipmap-xhdpi/message3.png" alt="">
+      </button>
+    </header>
+    
+
+    <div class="mui-content">
+      <div class="PhotoAlbum">
+        <img src="../images/timg.jpg" alt="">
+        <div class="hearderInfo">
+          <div>
+              <span>哈士奇</span>
+              <div class="hearderImg">
+                  <img src="../images/12-2.jpg" alt="">
+              </div>
+          </div>
+          <span>很多人被命运安排，而我安排命运。</span>
+        </div>
+      </div>
+
+      <div class="dynamic">
+        <div class="Today">
+          <span>今天</span>
+          <div>
+            <img src="../images/mipmap-xhdpi/icon_camera_edit.png" alt="">
+          </div>
+        </div>
+
+        <ul class="dynamicList">
+          <!-- <li>
+            <a href="javascript:;">
+              <div class="date"><i>01</i>1月</div>
+              <div class="dynamicRight">
+                  <div class="dynamicImgs">
+                     <img src="../images/12-1.jpg" alt="">
+                     <img src="../images/12-1.jpg" alt="">
+                   </div>
+                   <div class="dynamicTxts">
+                     <span>>很多人被命运安排，而我安排命运……</span>
+                     <span class="togetherNum">共<i class="dynamicImgNum">2</i>张</span>
+                   </div>
+              </div>
+            </a>
+          </li>  -->
+           <!-- {{each arr value1 index1}}
+            <li>
+            <a href="javascript:;">
+              <div class="date"><i>{{01}}</i>{{1月}}</div>
+              <div class="dynamicRight">
+                  {{each value1.children value2 index2}}
+                  <div class="dynamicImgs">
+                     <img src="{{value2.cat_icon||'../images/01.gif'}}" alt="">
+                   </div>
+                   {{/each}}
+                   <div class="dynamicTxts">
+                     <span>{{很多人被命运安排，而我安排命运……}}</span>
+                     <span>共<i class="dynamicImgNum"></i>张</span>
+                   </div>
+              </div>
+            </a>
+          </li>
+          {{/each}} -->
+        
+        
+            <!-- 这没有的 --> 
+
+        </ul>
+      </div>
+
+    </div>
+
+
+  
+    <!-- 弹框 -->
+
+
+    <!-- 遮罩层  -->
+    <div class="mui-popup-backdrop mui-active" style="display: none;"></div>
+
+<!-- Code injected by live-server -->
+<script type="text/html" id="goodsTpl">
+  {{each data val index}}
+  <li> 
+    <!-- <img src="{{val}}"> -->
+    <a href="javascript:;">
+     <div class="date"><i>{{val.day}}</i>{{val.month}}</div>
+      <div class="dynamicRight">
+          <div class="dynamicImgs">
+              {{each val.dynamicImg1 val2 index2}}
+                <img src="{{val2.Img}}" alt="">
+              {{/each}}
+           </div>
+           <div class="dynamicTxts">
+             <span>{{val.dynamicTxts}}</span>
+             <span class="togetherNum">共<i class="dynamicImgNum"></i>张</span>
+           </div>
+        </div>
+      </a>
+  </li>
+  {{/each}}
+</script>
+</body>
+</html>
+<script src="../js/template-web.js"></script>
+<script src="../js/ChatRecord.js"></script>
+
+<script>
+  // $('.headImg2').on('click',function(){
+  //   window.location.href = "./ChatSettings.html";
+  // })
+
+
+    
+    
+// 获取相册背景高度
+// var height = $(".PhotoAlbum").outerHeight();
+// console.log(height);
+
+//轮播图高度
+var sliderHeight = $(".PhotoAlbum").outerHeight();
+        console.log(sliderHeight);
+        //  获取头部的标签
+window. onscroll= function(){
+     // console.log(123);
+     // var scrollTop=document.body.scrollTop;
+     // 解决兼容问题i
+     var scrollTop=document.documentElement.scrollTop||window.pageYOffset||document.body.scrollTop;
+     // console.log(scrollTop);
+
+     //s设置透明度
+     var tmpOpa = scrollTop/sliderHeight;
+
+     if(tmpOpa>0.9){
+         tmpOpa=0.9;
+     }
+     // console.log(tmpOpa);
+     // 设置到头部标签中
+     header.style.backgroundColor = "rgba(0, 0, 0, " + tmpOpa + ")";
+     header.style.color = "rgba(255, 255, 255, " + tmpOpa + ")";
+    //  headImg2.style.display = none;
+    // $('.headerTxt').css("rgba(255, 0, 255, " + tmpOpa + ")");
+    // console.log($('.headerTxt'));
+    
+}
+
+
+
+  // 切换输入法
+  $('.voice').on('click',function(){
+    $('.voice').toggleClass('keyboard')
+    $('.clickVoice').toggleClass('clickKeyboard')
+    $('.browList').addClass('browList2')
+  })
+  //切换表情
+  $('.expression1').on('click',function(){
+    $('.expression1').toggleClass('expression2')
+    $('.browList').toggleClass('browList2')
+    // $('.voice').toggleClass('keyboard')
+    // $('.clickVoice').toggleClass('clickKeyboard')
+    // if($('.voice').hasClass('keyboard')){
+    //   $('.voice').toggleClass('keyboard')
+    //   console.log('addClass');
+    // }
+    if(!$('.moreList').hasClass('moreList2')){
+      $('.moreList').addClass('moreList2')
+    }
+    // voice keyboard
+  })
+
+  // 显示更多
+  $('.more').on('click',function(){
+    $('.moreList').toggleClass('moreList2')
+    if(!$('.browList').hasClass('browList2')){
+      $('.browList').addClass('browList2')
+    }
+    // $('.browList').removeClass('browList2')
+    // if( $('.moreList').hasClass('moreList2') ){
+    //     console.log('显示');
+    //   $('.more').on('click',function(){
+    //     $('.moreList').slideUp(200)
+    //   })
+    // }
+  })
+
+
+
+// 判断 文本 显示发送按钮
+$(function () {
+  $('#inputKeyboard').on('keyup',function () {
+  var myinfo = $('#inputKeyboard').val();
+  if (myinfo.length > 0) {
+     $('.sendBtn').fadeIn(100);
+   } else {
+     $('.sendBtn').fadeOut(100);
+   }
+  })
+})
+
+
+      // 发送消息 
+          $(function () {
+
+            $('.sendBtn').click(function (event) {
+                event.stopPropagation()
+                var myinfo = $('#inputKeyboard').val();
+                // myinfo = $.trim(myinfo);
+
+                if (myinfo.length > 0) {
+                  $('.sendBtn').show(200);
+                } else if (myinfo == '') {
+                  mui.toast('内容不能为空哦');
+                    return;
+                } else if (myinfo.length >= 300) {
+                  mui.toast('内容太长啦');
+                    return;
+                } 
+                var tag = $('<li class="mysaid"><div class="mysaidTxt">' + myinfo + ' </div><img src="../images/00.png" alt=""></li>');
+
+                $('.ChatRecordList').append(tag);
+                // $('.ChatRecordList li:eq(0)').hide().slideDown(500);
+                $('.ChatRecordList').val('');
+                $('#inputKeyboard').val("").focus(); // 清空并获得焦点
+            });
+
+        });
+
+
+</script>
+
+
