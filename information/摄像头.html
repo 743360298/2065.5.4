@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+  <title>Document</title>
+</head>
+<body>
+    <button onclick="showActionSheet()">点击上传</button>
+</body>
+</html>
+<script>
+var imgs = "";
+
+function showActionSheet() {
+    var actionbuttons = [{
+        title: "拍照"
+    }, {
+        title: "相册选取"
+    }];
+    var actionstyle = {
+        title: "选择照片",
+        cancel: "取消",
+        buttons: actionbuttons
+    };
+    plus.nativeUI.actionSheet(actionstyle, function(e) {
+        if(e.index == 1) {
+            getImage();
+        } else if(e.index == 2) {
+            appendByGallery();
+        }
+    });
+}
+
+function getImage() {
+    var cmr = plus.camera.getCamera();
+    cmr.captureImage(function(p) {
+        plus.io.resolveLocalFileSystemURL(p, function(entry) {
+            var localurl = entry.toLocalURL(); //把拍照的目录路径，变成本地url路径，例如file:///........之类的。
+            appendFile(localurl);
+            console.log("返回路径：" + localurl)
+            //                      }
+        });
+    }, function(error) {
+        alert("Capture image failed: " + error.message);
+    });
+}
+
+// 从相册添加文件 
+function appendByGallery() {
+    plus.gallery.pick(function(path) {
+        appendFile(path); //处理图片的地方
+    });
+}
+
+// 添加文件
+function appendFile(path) {
+    var img = new Image();
+    img.src = path; // 传过来的图片路径在这里用。
+    img.onload = function() {
+        var that = this;
+        //生成比例 
+        var w = that.width,
+            h = that.height,
+            scale = w / h;
+        w = 480 || w; //480  你想压缩到多大，改这里
+        h = w / scale;
+
+        //生成canvas
+        var canvas = document.createElement('canvas');
+        var ctx = canvas.getContext('2d');
+        $(canvas).attr({
+            width: w,
+            height: h
+        });
+        ctx.drawImage(that, 0, 0, w, h);
+        var base64 = canvas.toDataURL('image/jpeg', 1 || 0.8); //1最清晰，越低越模糊。    
+
+
+        var imgPath = TransferString(base64);
+        console.log(imgPath)
+        upload(imgPath)
+    }
+}
+
+function TransferString(content) {
+    var string = content;
+    try {
+        string = string.replace(/\r\n/g, "<br>")
+        string = string.replace(/\n/g, "<br>");
+    } catch(e) {
+        alert(e.message);
+    }
+    return string;
+}
+
+function upload(imgPath) {
+    $.ajax({
+        type: "post",
+        url: imgServerUrl+imgUpload,
+        data: {
+            base64Data: imgPath,
+            dataType: ".jpg"
+        },
+        success: function(data) {
+            console.log("返回路径：" + JSON.stringify(data));
+            imgs = '<img src="' + data + '" alt=""/>';
+            $('#imgFile').append(imgs);
+        },
+        error: function(err) {
+            console.log("错误：" + JSON.stringify(err))
+        }
+    });
+}
+
+</script>

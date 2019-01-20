@@ -174,7 +174,7 @@ $('.dynamicImgs').each(function (index, val) {
   console.log($('.dynamicImgs').eq(index).children().length);
   total = $('.dynamicImgs').eq(index).children().length
   
-  console.log($(this).siblings().children().children('.dynamicImgNum'));
+  // console.log($(this).siblings().children().children('.dynamicImgNum'));
   
   // arr.push(val.children("img").length)
   // console.log(total); 

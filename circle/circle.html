@@ -359,6 +359,9 @@ $('.praise').on('click',function () {
   // $(this).parent().next().toggle(',<span>金毛</span>')
   
   // 判断
+  console.log($(this).children().hasClass('likeBtn2'));
+
+  
   if ($(this).children().hasClass('likeBtn2')) {
       // $('.friendPraise').append(',<span>金毛</span>')
        $(this).parent().next().append(',<span>金毛</span>')

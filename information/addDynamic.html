@@ -1,0 +1,260 @@
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">  
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+  <link href="../css/mui.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/head.css">
+  <link rel="stylesheet" href="../css/animate.css">
+  <link rel="stylesheet" href="../css/info1.css">
+  <link rel="stylesheet" href="../css/PersonalInfo.css">
+  <link rel="stylesheet" href="../css/line.css">
+  <!-- <link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css" /> -->
+  <script src="../js/jquery-1.12.2.js"></script>
+  <script src="../js/public.js"></script>
+  <link href="../js/picker/mui.picker.css" rel="stylesheet"/>
+  <link href="../js/picker/mui.poppicker.css" rel="stylesheet"/>
+  <style>
+    body{
+      background-color: #fff;
+    }
+    .mui-icon-back:before, .mui-icon-left-nav:before{
+      color: #333 ;
+    }
+    .PersonalInfoList li a div img{
+      width: 0.22rem ;
+      height: 0.3rem ;
+      margin-left: 0.2rem ;
+    }
+    .PersonalInfoList li a div span{
+      margin-left: 0 ;
+      white-space: nowrap; 
+      font-size: 0.3rem ;
+      color: #333; 
+    }
+    #completeBtn{
+      font-size: 0.3rem ;
+      /* color: #333 ; */
+    }
+    #location{
+      white-space: normal;
+      width: 50% ;
+      display: flex;
+    justify-content: flex-end;
+    line-height: initial;
+      /* margin-left: 0.2rem ; */
+    }
+    #header{
+      border-bottom: 0.01rem solid #e9e9e9 ;
+      z-index: 99999;
+    }
+    #addDynamicBtn{
+      font-size: 0.3rem ;
+    }
+    #dynamicTxt{
+      outline:none;
+      resize:none;
+      line-height: 21px;
+    width: 100%;
+    height: 3.5rem;
+    margin-bottom: 0 ;
+    padding: 0.2rem  ;
+    -webkit-user-select: text;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    outline: 0;
+    background-color: #fff;
+    -webkit-appearance: none;
+    font-size: 0.3rem ;
+    }
+    .addImg{
+      background-color: #f7f7f7;
+      width: 2rem ;
+      height: 2rem ;
+      margin-left: 0.2rem ;
+      display: flex ;
+      justify-content: center ;
+      align-items: center ;
+    }
+    .addImg img{
+     width: 1rem ;
+    }
+   .addPosition{
+      padding: 0.2rem ;
+    }
+    .addPosition a{
+      padding: 0.2rem 0;
+      border-bottom: 0.01rem solid rgba(220,220,220,1) ;
+      border-top: 0.01rem solid rgba(220,220,220,1) ;
+      display: flex ;
+      justify-content: space-between ;
+      align-items: center ;
+    }
+    .addPosition a span{
+      font-size: 0.3rem ;
+      color: #333 ;
+    }
+    .addPosition a img{
+      width: 0.1rem;
+      height: 0.17rem;
+      display: flex ;
+      align-items: center ;
+    }
+    </style>
+</head>
+<body>
+  <header id="header" class="mui-bar mui-bar-nav">
+    <h1 class="mui-title">发表动态</h1>
+    <a class=" mui-action-back mui-icon mui-pull-left " id="cancelBtn">取消</a>
+    <button class="setBtn  mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-right headImg2 " id="addDynamicBtn">
+       发布
+    </button>
+  </header>
+  
+  <div class="mui-content">
+
+    <textarea name="" id="dynamicTxt" placeholder="emmmmmmm...我来发布新动态啦~"></textarea>
+    <div class="addImg" id="capture" onclick="showActionSheet()">
+      <img src="../images/mipmap-xhdpi/icon_edit.png" alt="">
+    </div>
+    <div class="addPosition">
+      <a href="javascript:;">
+        <span>添加位置</span>
+        <img src="../images/mipmap-xhdpi/smallarrow.png" alt="">
+      </a>
+    </div>
+
+
+
+
+
+        
+    
+  </div>
+
+<script src="../js/picker/mui.min.js"></script>
+<script src="../js/picker/city.data-3.js"></script>
+<script src="../js/picker/mui.poppicker.js"></script>
+<script src="../js/picker/mui.picker.js"></script>
+<script src="../js/ChatRecord.js"></script>
+
+
+</body>
+</html>
+<script>
+
+  // $('.addImg').on('tap',function () {
+  //   console.log('addImg');
+  // })
+
+var imgs = "";
+
+function showActionSheet() {
+    var actionbuttons = [{
+        title: "拍照"
+    }, {
+        title: "相册选取"
+    }];
+    var actionstyle = {
+        title: "选择照片",
+        cancel: "取消",
+        buttons: actionbuttons
+    };
+    plus.nativeUI.actionSheet(actionstyle, function(e) {
+        if(e.index == 1) {
+            getImage();
+        } else if(e.index == 2) {
+            appendByGallery();
+        }
+    });
+}
+
+function getImage() {
+    var cmr = plus.camera.getCamera();
+    cmr.captureImage(function(p) {
+        plus.io.resolveLocalFileSystemURL(p, function(entry) {
+            var localurl = entry.toLocalURL(); //把拍照的目录路径，变成本地url路径，例如file:///........之类的。
+            appendFile(localurl);
+            console.log("返回路径：" + localurl)
+            //                      }
+        });
+    }, function(error) {
+        alert("Capture image failed: " + error.message);
+    });
+}
+
+// 从相册添加文件 
+function appendByGallery() {
+    plus.gallery.pick(function(path) {
+        appendFile(path); //处理图片的地方
+    });
+}
+
+// 添加文件
+function appendFile(path) {
+    var img = new Image();
+    img.src = path; // 传过来的图片路径在这里用。
+    img.onload = function() {
+        var that = this;
+        //生成比例 
+        var w = that.width,
+            h = that.height,
+            scale = w / h;
+        w = 480 || w; //480  你想压缩到多大，改这里
+        h = w / scale;
+
+        //生成canvas
+        var canvas = document.createElement('canvas');
+        var ctx = canvas.getContext('2d');
+        $(canvas).attr({
+            width: w,
+            height: h
+        });
+        ctx.drawImage(that, 0, 0, w, h);
+        var base64 = canvas.toDataURL('image/jpeg', 1 || 0.8); //1最清晰，越低越模糊。    
+
+
+        var imgPath = TransferString(base64);
+        console.log(imgPath)
+        upload(imgPath)
+    }
+}
+
+function TransferString(content) {
+    var string = content;
+    try {
+        string = string.replace(/\r\n/g, "<br>")
+        string = string.replace(/\n/g, "<br>");
+    } catch(e) {
+        alert(e.message);
+    }
+    return string;
+}
+
+function upload(imgPath) {
+    $.ajax({
+        type: "post",
+        url: imgServerUrl+imgUpload,
+        data: {
+            base64Data: imgPath,
+            dataType: ".jpg"
+        },
+        success: function(data) {
+            console.log("返回路径：" + JSON.stringify(data));
+            imgs = '<img src="' + data + '" alt=""/>';
+            $('#imgFile').append(imgs);
+        },
+        error: function(err) {
+            console.log("错误：" + JSON.stringify(err))
+        }
+    });
+}
+
+
+</script>
