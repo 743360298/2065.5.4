@@ -105,8 +105,20 @@
           }
           console.log(adressStr);
           $('#location').html(adressStr)
+
+             // 存储
+             localStorage.setItem("lastname", adressStr);
+            // 取回
+            $("#location").html(localStorage.getItem("lastname"));
+            console.log($('#location').text());
+
         });
     }
+
+      window.onload =function() {
+          $("#location").html(localStorage.getItem("lastname"));
+      }
+
     </script>
     
   

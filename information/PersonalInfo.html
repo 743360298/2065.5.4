@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+
+
+  
   <script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
   <link href="../css/mui.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="../css/head.css">
@@ -14,6 +17,19 @@
   <script src="../js/jquery-1.12.2.js"></script>
   <script src="../js/mui.min.js"></script>
   <script src="../js/public.js"></script>
+
+
+  <script src="../js/jquery-1.12.2.js"></script>
+	<script src="../js/dev/js/mobiscroll.core-2.5.2.js" type="text/javascript"></script>
+	<script src="../js/dev/js/mobiscroll.core-2.5.2-zh.js" type="text/javascript"></script>
+	<link href="../js/dev/css/mobiscroll.core-2.5.2.css" rel="stylesheet" type="text/css" />
+	<link href="../js/dev/css/mobiscroll.animation-2.5.2.css" rel="stylesheet" type="text/css" />
+	<script src="../js/dev/js/mobiscroll.datetime-2.5.1.js" type="text/javascript"></script>
+	<script src="../js/dev/js/mobiscroll.datetime-2.5.1-zh.js" type="text/javascript"></script>
+	<!-- S 可根据自己喜好引入样式风格文件 -->
+	<script src="../js/dev/js/mobiscroll.android-ics-2.5.2.js" type="text/javascript"></script>
+	<link href="../js/dev/css/mobiscroll.android-ics-2.5.2.css" rel="stylesheet" type="text/css" />
+  <!-- E 可根据自己喜好引入样式风格文件 -->
   <style>
     body{
       background-color: #f7f7f7;
@@ -21,7 +37,74 @@
     .mui-icon-back:before, .mui-icon-left-nav:before{
       color: #333 ;
     }
+    .birthdayBox{
+      position: relative;
+    }
+    #appDateTime{
+      margin: 0;
+      padding: 0;
+      width: 100% ;
+      height: 100% ;
+      position: absolute;
+      opacity: 0;
+    }
+    #nickname,#TalkAbout{
+      margin: 0;
+      padding: 0;
+      height: 100% ;
+      width: 100% ;
+      background:none;  
+      outline:none;  
+      border:0px;
+      text-align: end;
+      white-space: normal;
+      color: #828282;
+      margin-left: 0.2rem;
+      font-size: 0.26rem;
+      line-height: initial;
+    }
+    .pictureBigImg{
+      width: 100%;
+      z-index: 999999;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50% ,-50%);
+      display: none;
+    }
+    .cancel{
+      background-color: #fff;
+      height: 1rem;
+      line-height: 1rem;
+      text-align: center;
+      font-size: 0.32rem;
+    }
     </style>
+    
+    <script type="text/javascript">
+      $(function () {
+        var currYear = (new Date()).getFullYear();    
+              var opt={};
+              opt.date = {preset : 'date'};
+              //opt.datetime = { preset : 'datetime', minDate: new Date(2012,3,10,9,22), maxDate: new Date(2014,7,30,15,44), stepMinute: 5  };
+              opt.datetime = {preset : 'datetime'};
+              opt.time = {preset : 'time'};
+              opt.default = {
+                  theme: 'android-ics light', //皮肤样式
+                  display: 'modal', //显示方式 
+                  mode: 'scroller', //日期选择模式
+                  lang:'zh',
+                  startYear:currYear - 119, //开始年份
+                  endYear:currYear + 0 //结束年份
+              };
+  
+                var optDateTime = $.extend(opt['date'], opt['default']) 
+                var optTime = $.extend(opt['time'], opt['default']);
+          $("#appDateTime").mobiscroll(optDateTime);
+
+        });
+    </script>
+
 </head>
 <body>
   <header id="header" class="mui-bar mui-bar-nav">
@@ -31,12 +114,16 @@
   
   <div class="mui-content">
 
+    <!-- 头像大图 -->
+    <img class="pictureBigImg" src="../images/12-1.jpg" alt="">
+
     <ul class="PersonalInfoList">
       <li>
         <a href="./picture.html">
+        <!-- <a class="picture"> -->
           <span>头像</span>
           <div>
-            <span><img src="../images/12-1.jpg" alt=""></span>
+            <span><img class="pictureImg" src="../images/12-1.jpg" alt=""></span>
             <span class="mui-icon mui-icon-arrowright"></span>
             <!-- <img src="../images/mipmap-xhdpi/smallarrow.png" alt=""> -->
           </div>
@@ -46,7 +133,8 @@
         <a href="javascript:;">
           <span>昵称</span>
           <div>
-            <span>哈士奇</span>
+            <!-- <span>哈士奇</span> -->
+            <input type="text" id="nickname" value="哈士奇">
             <span class="mui-icon mui-icon-arrowright"></span>
           </div>
         </a>
@@ -55,9 +143,10 @@
           <a href="javascript:;">
             <span>个性签名</span>
             <div>
-              <span>我的愿望是每天睡醒都又小鱼干
+              <!-- <span>我的愿望是每天睡醒都又小鱼干
                   吃，吃完小鱼干还有小饼干哈哈
-                  哈哈哈哈好开心</span>
+                  哈哈哈哈好开心</span> -->
+                  <input type="text" id="TalkAbout" value="吵架没输过，打架没赢过">
               <span class="mui-icon mui-icon-arrowright"></span>
             </div>
           </a>
@@ -72,19 +161,23 @@
             </a>
           </li>
         <li>
-            <a href="./birthday.html">
+            <a class="birthdayBox">
+                <input type="text" name="appDate" id="appDateTime" value="" />
+            <!-- <a href="./birthday.html" id="appDateTime"> -->
               <span>生日</span>
               <div>
-                <span>1999-6-6</span>
+              
+                <span id="birthday">1999-6-6</span>
                 <span class="mui-icon mui-icon-arrowright"></span>
               </div>
             </a>
           </li>
+
         <li>
             <a href="javascript:;">
               <span>年龄</span>
               <div>
-                <span>20</span>
+                <span id="age">20</span>
                 <span class="mui-icon mui-icon-arrowright"></span>
               </div>
             </a>
@@ -102,7 +195,7 @@
             <a href="javascript:;">
               <span>星座</span>
               <div>
-                <span>水瓶座</span>
+                <span id="zodiac">水瓶座</span>
                 <span class="mui-icon mui-icon-arrowright"></span>
               </div>
             </a>
@@ -111,7 +204,7 @@
             <a href="./region.html">
               <span>地区</span>
               <div>
-                <span>广东-广州</span>
+                <span id="location">广东-广州</span>
                 <span class="mui-icon mui-icon-arrowright"></span>
               </div>
             </a>
@@ -123,7 +216,7 @@
       <ul class="bouncedList">
         <li>男</li>
         <li>女</li>
-        <li class="cancel">取消</li>
+        <div class="cancel">取消</div>
       </ul>
   </div>
 
@@ -141,19 +234,25 @@
 
 <script src="../js/PersonalInfo.js"></script>
 <script>
+
+
+  
   
   $('#genderBtn').on('click',function () {
     $('.mui-active').show()
     $('.bouncedSiyou').slideDown(200)
+      // 性别储存
   })
   $('.mui-active').on('click',function () {
     $('.mui-active').hide()
     $('.bouncedSiyou').slideUp(200)
     $('.addFriendBounced').hide(200)
+    $('.pictureBigImg').fadeOut(200)
   })
   $('.cancel').on('click',function () {
     $('.mui-active').hide()
     $('.bouncedSiyou').slideUp(200)
+    // $("#gender").html(localStorage.getItem("gender"));
   })
 
 $('.bouncedList li').on('click',function () {
@@ -162,10 +261,52 @@ $('.bouncedList li').on('click',function () {
   $('#gender').html(gender);
   $('.mui-active').hide()
   $('.bouncedSiyou').slideUp(200)
+    var gender = $('#gender').text();
+    console.log(gender);
+    localStorage.setItem("gender", gender);
+    $("#gender").html(localStorage.getItem("gender"));
 })
   
+
+// 头像放大
+$('.picture').on('click',function () {
+  $('.mui-active').show()
+  $('.pictureBigImg').fadeIn(200)
+})
+
+// 修改昵称
+$("#nickname").blur(function(){
+  console.log( $('#nickname').val());
+  var nickname = $('#nickname').val()
+  localStorage.setItem("nickname", nickname);
+  $("#nickname").html(localStorage.getItem("nickname"));
+});
+
+//修改个性签名
+$("#TalkAbout").blur(function(){
+  console.log( $('#TalkAbout').val());
+  var TalkAbout = $('#TalkAbout').val()
+  localStorage.setItem("TalkAbout", TalkAbout);
+  $("#TalkAbout").html(localStorage.getItem("TalkAbout"));
+});
+
   
   
-  
+window.onload =function() {
+    // 地址
+    $("#location").html(localStorage.getItem("lastname"));
+    // 年龄
+    $("#age").html(localStorage.getItem("age"));
+    // 生日
+    $("#birthday").html(localStorage.getItem("appDateTime"));
+    // 星座
+    $("#zodiac").html(localStorage.getItem("zodiac"));
+    // 性别
+    $("#gender").html(localStorage.getItem("gender"));
+    // 昵称
+    $("#nickname").val(localStorage.getItem("nickname"));
+    // 个性签名
+    $("#TalkAbout").val(localStorage.getItem("TalkAbout"));
+}
   
 </script>

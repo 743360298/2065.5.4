@@ -553,7 +553,7 @@
   width: 2rem;
 }
 
-.dynamicList li {
+.dynamicList>li {
   margin-top: 0.25rem;
 }
 

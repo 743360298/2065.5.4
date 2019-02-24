@@ -108,9 +108,9 @@
                   </div>
                 </div>
                 <div class="menuOld">
-                  <span>20岁</span>
-                  <span>水瓶座</span>
-                  <span>广东-广州</span>
+                  <span id="age">20岁</span>
+                  <span id="zodiac">水瓶座</span>
+                  <span id="location">广东-广州</span>
                 </div>
                 <div class="menuHeadLike">
                   <img src="../images/mipmap-xhdpi/like.png" alt="">
@@ -464,6 +464,24 @@ $("#headImgSetBtn").on('tap',function () {
   // $('.mui-popup-backdrop2').animate({'margin-left':'5.67rem'});
   // $('.mui-popup-backdrop2').toggleClass('mui-popup-backdrop3')
 })
+
+window.onload =function() {
+    // 地址
+    $("#location").html(localStorage.getItem("lastname"));
+    // 生日
+    $("#birthday").html(localStorage.getItem("appDateTime"));
+    // 星座
+    $("#zodiac").html(localStorage.getItem("zodiac"));
+    // 性别
+    $("#gender").html(localStorage.getItem("gender"));
+    // 昵称
+    $("#nickname").val(localStorage.getItem("nickname"));
+    // 个性签名
+    $("#TalkAbout").val(localStorage.getItem("TalkAbout"));
+    // 年龄
+    $("#age").html(localStorage.getItem("age"+岁));
+    
+}
 
 // 头像缩回
 

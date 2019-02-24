@@ -227,11 +227,12 @@
     <a href="javascript:;">
      <div class="date"><i>{{val.day}}</i>{{val.month}}</div>
       <div class="dynamicRight">
-          <div class="dynamicImgs">
+          <ul class="dynamicImgs">
               {{each val.dynamicImg1 val2 index2}}
-                <img src="{{val2.Img}}" alt="">
+                 <img src="{{val2.Img}}" alt="">
+                 <!-- <li><img src="{{val2.Img}}" alt=""></li> -->
               {{/each}}
-           </div>
+           </ul>
            <div class="dynamicTxts">
              <span>{{val.dynamicTxts}}</span>
              <span class="togetherNum">共<i class="dynamicImgNum"></i>张</span>
@@ -251,7 +252,29 @@
     window.location.href = "./addDynamic.html";
   })
 
+// window.onload =function() {
+//   // // 发布内容
+//   // $("#dynamicTxt").html(localStorage.getItem("dynamicTxt"));
+//   // // m
+//   // $("#month").html(localStorage.getItem("month"));
+//   // // date
+//   // $("#date").html(localStorage.getItem("date"));
 
+//   var dynamicArr = this.data.dynamicArr;
+//   var dynamicObj = this.data.dynamicObj;
+//   dynamicObj = {
+//     day:localStorage.getItem("date"),
+//     month:localStorage.getItem("month"),
+//     dynamicImg1:[],
+//     dynamicTxts : localStorage.getItem("dynamicTxt"),
+//   }
+//   console.log(dynamicObj);
+//   data.push(dynamicObj);
+//   // console.log(data);
+//   var html = template("goodsTpl",{data});
+//   // $('.dynamicList').html(html);
+  
+// }
     
     
 // 获取相册背景高度

@@ -157,6 +157,31 @@ data = [
   },
 ];  
 
+  // // 发布内容
+  // $("#dynamicTxt").html(localStorage.getItem("dynamicTxt"));
+  // // m
+  // $("#month").html(localStorage.getItem("month"));
+  // // date
+  // $("#date").html(localStorage.getItem("date"));
+
+  var dynamicArr = this.data.dynamicArr;
+  var dynamicObj = this.data.dynamicObj;
+  var month = localStorage.getItem("month")+'月'
+  
+  dynamicObj = {
+    day:localStorage.getItem("date"),
+    month:month,
+    dynamicImg1:[],
+    dynamicTxts : localStorage.getItem("dynamicTxt"),
+  }
+  console.log(dynamicObj);
+  data.unshift(dynamicObj);
+  // console.log(data);
+  var html = template("goodsTpl",{data});
+  // $('.dynamicList').html(html);
+  
+
+
 console.log(data);
 var html = template("goodsTpl",{data});
 $('.dynamicList').html(html);
