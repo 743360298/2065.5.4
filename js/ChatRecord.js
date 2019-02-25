@@ -174,10 +174,28 @@ data = [
     dynamicImg1:[],
     dynamicTxts : localStorage.getItem("dynamicTxt"),
   }
+  
   console.log(dynamicObj);
-  data.unshift(dynamicObj);
+  // if (dynamicObj.day==""&&dynamicObj.month==""&&dynamicObj.dynamicTxt=="") {
+  if (dynamicObj.day==""||dynamicObj.day==null) {
+      console.log('day为空');
+  } else {
+    data.unshift(dynamicObj);
+  }
+  // if (dynamicObj.month==""||dynamicObj.month==null) {
+  //     console.log('month为空');
+  // } else {
+  //   data.unshift(dynamicObj);
+  //   console.log(dynamicObj);
+  // }
+  // if (dynamicObj.dynamicTxt==""||dynamicObj.dynamicTxt==null) {
+  //     console.log('dynamicTxt为空');
+  // } else {
+  //   data.unshift(dynamicObj);
+  // }
+ 
   // console.log(data);
-  var html = template("goodsTpl",{data});
+  // var html = template("goodsTpl",{data});
   // $('.dynamicList').html(html);
   
 

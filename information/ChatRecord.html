@@ -48,6 +48,43 @@
       .mui-bar-nav~.mui-content{
         padding-bottom: 0.97rem ;
       }
+      .mysaidImg{
+        margin-right: 0.3rem;
+        background-color: #fff;
+        padding: 0.3rem 0.24rem;
+        margin-left: 0.3rem;
+        border-radius: 0.1rem;
+        position: relative;
+        line-height: inherit;
+        font-size: 0.3rem;
+        max-width: 5rem;
+        word-wrap: break-word;
+        word-break: break-all;
+        line-height: initial;
+      }
+      .mysaidImg::before {
+        clear: both;
+        display: block;
+        content: "";
+        position: absolute;
+        right: -0.28rem;
+        border-top: 0.15rem solid transparent;
+        border-bottom: 0.15rem solid transparent;
+        border-left: 0.15rem solid #fff;
+        border-right: 0.15rem solid transparent;
+    }
+    #SendPhoto{
+        z-index: 999;
+    }
+    #SendPhoto,#cropedBigImg{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        opacity: 0;
+    }
+    .thisImg{
+      width: 100%;
+    }
   </style>
 </head>
 <body>
@@ -115,7 +152,9 @@
 
         <ul class="moreList moreList2">
           <li>
-            <a href="javascript:;" >
+            <a href="javascript:;" style="  position: relative;">
+                <input type="file" id="SendPhoto" name="file">
+                <img id="cropedBigImg" value='custom' alt="" data-address=''  title="自定义背景"/>
                 <img src="..//images/mipmap-xhdpi/icon_photo.png" alt="">
                 <span>照片</span>
             </a>
@@ -166,6 +205,16 @@
     $('.voice').toggleClass('keyboard')
     $('.clickVoice').toggleClass('clickKeyboard')
     $('.browList').addClass('browList2')
+    // 获取footerInput底部高度
+    var footHeight = $('#footerInput').outerHeight(); 
+    console.log(footHeight);
+    // 赋值给mui-content
+    var num = footHeight*1.8/100;
+    var newFootHeight = num + "rem";
+    $(".mui-content").css("padding-bottom",newFootHeight);
+    // 自动滚到最底部
+    var h = $(document).height()-$(window).height();
+    $(document).scrollTop(h);
   })
   //切换表情
   $('.expression1').on('click',function(){
@@ -181,6 +230,13 @@
       $('.moreList').addClass('moreList2')
     }
     // voice keyboard
+    var footHeight = $('#footerInput').outerHeight(); 
+    console.log(footHeight);
+    var num = footHeight*1.8/100;
+    var newFootHeight = num + "rem";
+    $(".mui-content").css("padding-bottom",newFootHeight);
+    var h = $(document).height()-$(window).height();
+    $(document).scrollTop(h);
   })
 
   // 显示更多
@@ -196,6 +252,13 @@
     //     $('.moreList').slideUp(200)
     //   })
     // }
+    var footHeight = $('#footerInput').outerHeight(); 
+    console.log(footHeight);
+    var num = footHeight*1.8/100;
+    var newFootHeight = num + "rem";
+    $(".mui-content").css("padding-bottom",newFootHeight);
+    var h = $(document).height()-$(window).height();
+    $(document).scrollTop(h);
   })
 
 
@@ -216,7 +279,7 @@ $(function () {
       // 发送消息 
           $(function () {
 
-            $('.sendBtn').click(function (event) {
+            $('.sendBtn').on('click',function (event) {
                 event.stopPropagation()
                 var myinfo = $('#inputKeyboard').val();
                 // myinfo = $.trim(myinfo);
@@ -233,12 +296,140 @@ $(function () {
                 var tag = $('<li class="mysaid"><div class="mysaidTxt">' + myinfo + ' </div><img src="../images/00.png" alt=""></li>');
 
                 $('.ChatRecordList').append(tag);
-                // $('.ChatRecordList li:eq(0)').hide().slideDown(500);
                 $('.ChatRecordList').val('');
                 $('#inputKeyboard').val("").focus(); // 清空并获得焦点
+                // 滚动条自动滚到最底部1
+                var h = $(document).height()-$(window).height();
+                $(document).scrollTop(h);
+                // //2
+                // $('.mui-content')[0].scrollTop =$('.mui-content')[0].scrollHeight;
+                // //3
+                // $('.mui-content').scrollTop( $('.mui-content')[0].scrollHeight );
+                // $('.ChatRecordList li:eq(0)').hide().slideDown(500);
+
+
             });
 
         });
+
+          $(function () {
+            $('#browList li a img').on('click',function(){
+                console.log(this);
+                // 获取src
+                var thisSrc = $(this).attr('src')
+                console.log(thisSrc);
+                // 赋值
+                // $(".thisImg").attr("src",thisSrc);
+
+                var tag = $('<li class="mysaid"><div class="mysaidImg">'+
+                                '<img class="thisImg" src="'+ thisSrc +'" alt=""></div>'+
+                                '<img src="https://743360298.github.io/2065.4.8/images/00.png" alt="">'+
+                            '</li>')
+                $('.ChatRecordList').append(tag);
+
+                // 滚动条自动滚到最底部
+                console.log('document'+$(document).height());
+                console.log('window'+$(window).height());
+                
+                var h = $(document).height()-$(window).height();
+                $(document).scrollTop(h);
+
+
+                //    $(".thisImg").html(
+                //     localStorage.getItem("thisImg")
+
+                // var src = this.attr('src');
+                // console.log(src);
+                
+
+                // html += '<li>'+
+                //         ' <a href="javascript:;" >'+
+                //             '<img src="'+ src +'" alt="">'+
+                //         '</a>'+
+                //         '</li>'
+                // // items.innerHTML = html;
+                // $('#browList').html(html);
+
+                // 288268295127195
+
+            })
+        })
+
+
+          $('#SendPhoto').on('change',function(){
+        var filePath = $(this).val();         //获取到input的value，里面是文件的路径
+        // console.log(this.getAttribute("src"));  //获取的是图片的相对路径
+        var fileFormat = filePath.substring(filePath.lastIndexOf(".")).toLowerCase();
+        // console.log(filePath);
+        var src = window.URL.createObjectURL(this.files[0]); //转成可以在本地预览的格式
+        var newImgSrc = $('#cropedBigImg').attr('src',src);
+        // var srcImg =  $('#cropedBigImg').getAttribute("src")
+
+        // 判断盒子是否有图片
+        // var maskObj = $("cropedBigImg");
+        // var imgObjs = maskObj.children;
+        // if(ImgObj.fileSize > 0 || (ImgObj.width > 0 && ImgObj.height > 0)){
+        //     $('.sendBtn').fadeIn(100);
+        //    return true;
+        // } else {
+        //     $('.sendBtn').fadeOut(100);
+        //    return false;
+        // }
+
+        // function myFunction() {
+        //     alert('无法加载图片。');
+        // }
+
+        // function CheckImgExists(imgurl) {  
+        //     var ImgObj = new Image(); //判断图片是否存在  
+        //     ImgObj.src = imgurl;  
+        //     //没有图片，则返回-1  
+        //     if (ImgObj.fileSize > 0 || (ImgObj.width > 0 && ImgObj.height > 0)) {  
+        //         return true;  
+        //     } else {  
+        //         return false;
+        //     }  
+        // } 
+
+        if($('#cropedBigImg').attr('src',src)){
+            $('.sendBtn').fadeIn(100);
+        }else{
+            $('.sendBtn').fadeOut(100);
+        }
+        
+        // 检查是否是图片
+        // if( !fileFormat.match(/.png|.jpg|.jpeg/) ) {
+        //     error_prompt_alert('上传错误,文件格式必须为：png/jpg/jpeg');
+        //     return;  
+        // }
+        // var src = window.URL.createObjectURL(this.files[0]); //转成可以在本地预览的格式
+        // $('#cropedBigImg').attr('src',src);
+        $('.sendBtn').on('click',function(){
+            var tag = $('<li class="mysaid"><div class="mysaidImg">'+
+                                '<img class="thisImg" src="'+ src +'" alt=""></div>'+
+                                '<img src="https://743360298.github.io/2065.4.8/images/00.png" alt="">'+
+                            '</li>')
+            $('.ChatRecordList').append(tag);
+
+            // 把图片清空    $(".thisImg").attr("src",thisSrc);
+            var newImgSrc = $('#cropedBigImg').attr('src','000');
+            if($('#cropedBigImg').attr('src','000')){
+                $('.sendBtn').fadeOut(100);
+            }else{
+                $('.sendBtn').fadeOut(100);
+            }
+            // 滚动条自动滚到最底部
+            console.log('document'+$(document).height());
+            console.log('window'+$(window).height());
+            var h = $(document).height()-$(window).height();
+            $(document).scrollTop(h);
+        })
+        
+        console.log($('#cropedBigImg').attr('src',src));
+        
+
+
+    })
 
 
 </script>

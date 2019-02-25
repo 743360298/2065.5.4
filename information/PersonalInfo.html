@@ -294,19 +294,41 @@ $("#TalkAbout").blur(function(){
   
 window.onload =function() {
     // 地址
-    $("#location").html(localStorage.getItem("lastname"));
+    // $("#location").html(localStorage.getItem("lastname"));
+    var oldLocation = localStorage.getItem("lastname")||$('#location').text();  
+    $('#location').html(oldLocation)
     // 年龄
-    $("#age").html(localStorage.getItem("age"));
+    // $("#age").html(localStorage.getItem("age"));
+    var oldAge = localStorage.getItem("age")||$('#age').text();  
+    $('#age').html(oldAge)
     // 生日
-    $("#birthday").html(localStorage.getItem("appDateTime"));
+    // $("#birthday").html(localStorage.getItem("appDateTime"));
+    var oldBirthday = localStorage.getItem("appDateTime")||$('#birthday').text();  
+    $('#birthday').html(oldBirthday)
     // 星座
-    $("#zodiac").html(localStorage.getItem("zodiac"));
+    // $("#zodiac").html(localStorage.getItem("zodiac"));
+    var oldZodiac = localStorage.getItem("zodiac")||$('#zodiac').text();  
+    $('#zodiac').html(oldZodiac)
     // 性别
-    $("#gender").html(localStorage.getItem("gender"));
+    // $("#gender").html(localStorage.getItem("gender"));
+    // console.log(localStorage.getItem("gender"));
+    // if (localStorage.getItem("gender")) {
+    //    $("#gender").html(localStorage.getItem("gender"));
+	  // }else{ 
+    //   var oldGender = $('#gender').text();
+    //   $("#gender").text(222);
+    //   console.log();
+    // } 
+    var oldGender = localStorage.getItem("gender")||$('#gender').text();  
+    $('#gender').text(oldGender)
     // 昵称
-    $("#nickname").val(localStorage.getItem("nickname"));
+    // $("#nickname").val(localStorage.getItem("nickname"));
+    var oldNickname = localStorage.getItem("nickname")||$('#nickname').val();  
+    $('#nickname').val(oldNickname)
     // 个性签名
-    $("#TalkAbout").val(localStorage.getItem("TalkAbout"));
+    // $("#TalkAbout").val(localStorage.getItem("TalkAbout"));
+    var oldTalkAbout = localStorage.getItem("TalkAbout")||$('#TalkAbout').val();  
+    $('#TalkAbout').val(oldTalkAbout)
 }
   
 </script>
