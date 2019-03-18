@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+  <link href="../css/mui.min.css" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="./assets/css/site.css">
+  <link rel="stylesheet" href="./assets/css/pygments.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="./assets/libs/toastr/toastr.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/fix.css">
+
+  <link rel="stylesheet" href="../css/head.css">
+  <link rel="stylesheet" href="../css/info1.css">
+  <!-- <link rel="stylesheet" href="../css/info.css"> -->
+  <!-- <link rel="stylesheet" href="../css/ChatRecord.css"> -->
+  <script src="../js/mui.min.js"></script>
+  <script src="../js/jquery-1.12.2.js"></script>
+  <script src="../js/public.js"></script>
+  <!-- <script src="../js/delete.js"></script> -->
+  <style>
+    .mui-bar .mui-btn-nav.mui-pull-left .mui-icon-left-nav{
+        color:#333 ;
+      }
+      html{
+        background-color: #fff;
+      }
+      body{
+        background-color: #fff;
+      }
+      input{
+        margin-bottom: 0;
+        outline: none; 
+        background:none;  
+        border:0px;
+      }
+      .search{
+        display: flex ;
+        padding: 0.2rem ;
+        width: 100% ;
+        position: relative;
+        background-color: transparent;
+      }
+      .searchTxt{
+        /* display: flex ;
+        flex-direction: column ;
+        justify-content: center ; */
+        width: 100% ;
+        height: 0.8rem;
+        background-color: #f3f3f3;
+        color: #999 ;
+        text-indent: 2.2em ;
+        border-radius: 0.1rem ;
+        
+      }
+      .searchImg{
+        position: absolute;
+        width: 0.4rem ;
+        top: 50%;
+        left: 0;
+        transform: translate(85%,-50% );
+      }
+      .cancelBtn{
+        padding: 0 0.2rem 0 0.4rem ;
+        border: 0px solid transparent;
+        font-size: 0.3rem ;
+        color: #4EA3F9;
+        outline: none;
+        background-color: #fff;
+      }
+      .more {
+        display: flex ;
+      }
+      .more li{
+        padding: 0.3rem 0 ;
+        color: #848897;
+        display: flex ;
+        flex-direction: column; 
+        width: 16.666%;
+        justify-content: center;
+      }
+      .more li i{
+        font-size: 0.5rem ;
+      }
+      .more li i, .more li span{
+        display: flex ;
+        justify-content: center;
+        margin-top: 0.2rem ;
+      }
+  </style>
+</head>
+
+<body>
+    <!-- 搜索框 -->
+    <div class="search">
+      <input class="searchTxt" placeholder="搜索">
+      <img class="searchImg" src="../images/mipmap-xhdpi/icon_search.png" alt="">
+      <button type="button" class="cancelBtn">取消</button>
+    </div>
+
+    <ul class="more">
+      <li><i class="fa fa-user-circle-o" aria-hidden="true"></i><span>头像</span></li>
+      <li><i class="fa fa-image" aria-hidden="true"></i></i><span>看图</span></li>
+      <li><i class="fa fa-play-circle" aria-hidden="true"></i><span>视频</span></li>
+      <li><i class="fa fa-star-o" aria-hidden="true"></i></i><span>明星</span></li>
+      <li><i class="fa fa-feed" aria-hidden="true"></i><span>部落</span></li>
+      <li><i class="fa fa-eye" aria-hidden="true"></i><span>看点</span></li>
+    </ul>
+
+  
+</body>
+
+</html>
+<script>
+    $('.cancelBtn').on('tap',function () { 
+       mui.openWindow({
+    			url: './info4.html', //通过URL传参
+    		})
+   })
+
+    // $(".cancelBtn").on("click",function () {
+    //   $(".cancelBtn").style.background="white";
+    // })
+    $(".more li").on("click",function () {
+      mui.toast('敬请期待');
+    })
+  </script>

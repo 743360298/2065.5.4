@@ -13,6 +13,7 @@ li {
 }
 
 .circleTab {
+  width: 100% ;
   background-color: #fff;
   height: 0.76rem;
   display: flex;
@@ -137,6 +138,7 @@ li {
 }
 
 .circle-GPS {
+  z-index: 9999999;
   width: 1rem;
   height: 1rem;
   border-radius: 100%;

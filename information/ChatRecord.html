@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,8 +16,8 @@
   <script src="../js/jquery-1.12.2.js"></script>
   <script src="../js/public.js"></script>
   <!-- <script src="../js/delete.js"></script> -->
-   <style>
-      .mui-bar .mui-btn-nav.mui-pull-left .mui-icon-left-nav{
+  <style>
+    .mui-bar .mui-btn-nav.mui-pull-left .mui-icon-left-nav{
         color:#333 ;
       }
       html{
@@ -87,110 +88,112 @@
     }
   </style>
 </head>
+
 <body>
 
 
-    <header id="header" class="mui-bar mui-bar-nav">
-			
-        <h1 class="mui-title">二哈</h1>
-      <button class="mui-action-back mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-left"><span class="mui-icon mui-icon-left-nav"></span></button>
-      <button class="mui-btn mui-btn-blue mui-btn-link mui-pull-right headImg2">
-        <img src="../images/mipmap-xhdpi/icon_set.png" alt="">
-      </button>
-    </header>
-    
+  <header id="header" class="mui-bar mui-bar-nav">
 
-    <div class="mui-content">
+    <h1 class="mui-title">二哈</h1>
+    <button class="mui-action-back mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-left"><span class="mui-icon mui-icon-left-nav"></span></button>
+    <button class="mui-btn mui-btn-blue mui-btn-link mui-pull-right headImg2">
+      <img src="../images/mipmap-xhdpi/icon_set.png" alt="">
+    </button>
+  </header>
 
-      <div class="ChatRecord">
-        <ul class="ChatRecordList">
-          <li class="yoursaid">
-            <img src="../images/12-1.jpg" alt="">
-            <div class="yoursaidTxt">
-              你好么？？？
-            </div>
-          </li>
-          <li class="mysaid">
-            <div class="mysaidTxt">
-              好啊…
-            </div>
-            <img src="../images/00.png" alt="">
-          </li>
-        </ul>
+
+  <div class="mui-content">
+
+    <div class="ChatRecord">
+      <ul class="ChatRecordList">
+        <li class="yoursaid">
+          <img src="../images/12-1.jpg" alt="">
+          <div class="yoursaidTxt">
+            你好么？？？
+          </div>
+        </li>
+        <li class="mysaid">
+          <div class="mysaidTxt">
+            好啊…
+          </div>
+          <img src="../images/00.png" alt="">
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <footer id="footerInput">
+    <div class="inputMethod">
+      <div class="switch">
+        <img class="voice " src="../images/mipmap-xhdpi/icon_keyboard.png" alt="">
+        <img class="voice keyboard" src="../images/mipmap-xhdpi/icon_voice.png" alt="">
       </div>
+      <div class="clickVoice">
+        <span>按住说话</span>
+      </div>
+      <div class="clickVoice clickKeyboard">
+        <input type="text" id="inputKeyboard">
+      </div>
+      <div class="expression">
+        <img class="expression1 " src="../images/mipmap-xhdpi/icon_expression.png" alt="">
+        <img class="expression1 expression2" src="../images/mipmap-xhdpi/icon_keyboard.png" alt="">
+      </div>
+      <div class="more "><img src="../images/mipmap-xhdpi/icon_more.png" alt="">
+        <div class=" sendBtn"><span>发送</span></div>
+      </div>
+
 
     </div>
 
-
-    <footer id="footerInput">
-        <div class="inputMethod">
-          <div class="switch">
-            <img class="voice " src="../images/mipmap-xhdpi/icon_keyboard.png" alt="">
-            <img class="voice keyboard" src="../images/mipmap-xhdpi/icon_voice.png" alt="">
-          </div>
-          <div class="clickVoice">
-            <span>按住说话</span>
-          </div>
-          <div class="clickVoice clickKeyboard">
-            <input type="text" id="inputKeyboard">
-          </div>
-          <div  class="expression">
-            <img class="expression1 " src="../images/mipmap-xhdpi/icon_expression.png" alt="">
-            <img class="expression1 expression2" src="../images/mipmap-xhdpi/icon_keyboard.png" alt="">
-          </div>
-          <div  class="more "><img src="../images/mipmap-xhdpi/icon_more.png" alt="">
-            <div  class=" sendBtn"><span>发送</span></div>
-          </div>
-          
-
-        </div>
-
-        <ul class="browList browList2" id="browList">
-            <!-- <li><a href="javascript:;" ><img src="../images/default/2.gif" alt=""></a></li> -->
-          </ul>
+    <ul class="browList browList2" id="browList">
+      <!-- <li><a href="javascript:;" ><img src="../images/default/2.gif" alt=""></a></li> -->
+    </ul>
 
 
-        <ul class="moreList moreList2">
-          <li>
-            <a href="javascript:;" style="  position: relative;">
-                <input type="file" id="SendPhoto" name="file">
-                <img id="cropedBigImg" value='custom' alt="" data-address=''  title="自定义背景"/>
-                <img src="..//images/mipmap-xhdpi/icon_photo.png" alt="">
-                <span>照片</span>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:;" >
-                <img src="..//images/mipmap-xhdpi/icon_camera.png" alt="">
-                <span>相机</span>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:;" >
-                <img src="..//images/mipmap-xhdpi/icon_location.png" alt="">
-                <span>位置</span>
-            </a>
-          </li>
-          <li>
-            <a href="./line.html" >
-                <img src="..//images/mipmap-xhdpi/icon_route.png" alt="">
-                <span>线路图</span>
-            </a>
-          </li>
-        </ul>
-      </footer>
-      
-    <!-- 弹框 -->
+    <ul class="moreList moreList2">
+      <li>
+        <a href="javascript:;" style="  position: relative;">
+          <input type="file" id="SendPhoto" name="file">
+          <img id="cropedBigImg" value='custom' alt="" data-address='' title="自定义背景" />
+          <img src="..//images/mipmap-xhdpi/icon_photo.png" alt="">
+          <span>照片</span>
+        </a>
+      </li>
+      <li>
+        <a href="javascript:;">
+          <img src="..//images/mipmap-xhdpi/icon_camera.png" alt="">
+          <span>相机</span>
+        </a>
+      </li>
+      <li>
+        <a href="javascript:;">
+          <img src="..//images/mipmap-xhdpi/icon_location.png" alt="">
+          <span>位置</span>
+        </a>
+      </li>
+      <li>
+        <a href="./line.html">
+          <img src="..//images/mipmap-xhdpi/icon_route.png" alt="">
+          <span>线路图</span>
+        </a>
+      </li>
+    </ul>
+  </footer>
+
+  <!-- 弹框 -->
 
 
-    <!-- 遮罩层  -->
-    <div class="mui-popup-backdrop mui-active" style="display: none;"></div>
+  <!-- 遮罩层  -->
+  <div class="mui-popup-backdrop mui-active" style="display: none;"></div>
 
 </body>
+
 </html>
 <script src="../js/ChatRecord.js"></script>
 <script>
-  $('.headImg2').on('click',function(){
+  $('.headImg2').on('click', function () {
     window.location.href = "./ChatSettings.html";
   })
 
@@ -201,23 +204,24 @@
 
 
   // 切换输入法
-  $('.voice').on('click',function(){
+  $('.voice').on('click', function () {
     $('.voice').toggleClass('keyboard')
     $('.clickVoice').toggleClass('clickKeyboard')
     $('.browList').addClass('browList2')
+    $('#inputKeyboard').focus(); 
     // 获取footerInput底部高度
-    var footHeight = $('#footerInput').outerHeight(); 
+    var footHeight = $('#footerInput').outerHeight();
     console.log(footHeight);
     // 赋值给mui-content
-    var num = footHeight*1.8/100;
+    var num = footHeight * 1.8 / 100;
     var newFootHeight = num + "rem";
-    $(".mui-content").css("padding-bottom",newFootHeight);
+    $(".mui-content").css("padding-bottom", newFootHeight);
     // 自动滚到最底部
-    var h = $(document).height()-$(window).height();
+    var h = $(document).height() - $(window).height();
     $(document).scrollTop(h);
   })
   //切换表情
-  $('.expression1').on('click',function(){
+  $('.expression1').on('click', function () {
     $('.expression1').toggleClass('expression2')
     $('.browList').toggleClass('browList2')
     // $('.voice').toggleClass('keyboard')
@@ -226,23 +230,23 @@
     //   $('.voice').toggleClass('keyboard')
     //   console.log('addClass');
     // }
-    if(!$('.moreList').hasClass('moreList2')){
+    if (!$('.moreList').hasClass('moreList2')) {
       $('.moreList').addClass('moreList2')
     }
     // voice keyboard
-    var footHeight = $('#footerInput').outerHeight(); 
+    var footHeight = $('#footerInput').outerHeight();
     console.log(footHeight);
-    var num = footHeight*1.8/100;
+    var num = footHeight * 1.8 / 100;
     var newFootHeight = num + "rem";
-    $(".mui-content").css("padding-bottom",newFootHeight);
-    var h = $(document).height()-$(window).height();
+    $(".mui-content").css("padding-bottom", newFootHeight);
+    var h = $(document).height() - $(window).height();
     $(document).scrollTop(h);
   })
 
   // 显示更多
-  $('.more').on('click',function(){
+  $('.more').on('click', function () {
     $('.moreList').toggleClass('moreList2')
-    if(!$('.browList').hasClass('browList2')){
+    if (!$('.browList').hasClass('browList2')) {
       $('.browList').addClass('browList2')
     }
     // $('.browList').removeClass('browList2')
@@ -252,186 +256,183 @@
     //     $('.moreList').slideUp(200)
     //   })
     // }
-    var footHeight = $('#footerInput').outerHeight(); 
+    var footHeight = $('#footerInput').outerHeight();
     console.log(footHeight);
-    var num = footHeight*1.8/100;
+    var num = footHeight * 1.8 / 100;
     var newFootHeight = num + "rem";
-    $(".mui-content").css("padding-bottom",newFootHeight);
-    var h = $(document).height()-$(window).height();
+    $(".mui-content").css("padding-bottom", newFootHeight);
+    var h = $(document).height() - $(window).height();
     $(document).scrollTop(h);
   })
 
 
 
-// 判断 文本 显示发送按钮
-$(function () {
-  $('#inputKeyboard').on('keyup',function () {
-  var myinfo = $('#inputKeyboard').val();
-  if (myinfo.length > 0) {
-     $('.sendBtn').fadeIn(100);
-   } else {
-     $('.sendBtn').fadeOut(100);
-   }
+  // 判断 文本 显示发送按钮
+  $(function () {
+    $('#inputKeyboard').on('keyup', function () {
+      var myinfo = $('#inputKeyboard').val();
+      if (myinfo.length > 0) {
+        $('.sendBtn').fadeIn(100);
+      } else {
+        $('.sendBtn').fadeOut(100);
+      }
+    })
   })
-})
 
 
-      // 发送消息 
-          $(function () {
+  // 发送消息 
+  $(function () {
 
-            $('.sendBtn').on('click',function (event) {
-                event.stopPropagation()
-                var myinfo = $('#inputKeyboard').val();
-                // myinfo = $.trim(myinfo);
+    $('.sendBtn').on('click', function (event) {
+      event.stopPropagation()
+      var myinfo = $('#inputKeyboard').val();
+      // myinfo = $.trim(myinfo);
 
-                if (myinfo.length > 0) {
-                  $('.sendBtn').show(200);
-                } else if (myinfo == '') {
-                  mui.toast('内容不能为空哦');
-                    return;
-                } else if (myinfo.length >= 300) {
-                  mui.toast('内容太长啦');
-                    return;
-                } 
-                var tag = $('<li class="mysaid"><div class="mysaidTxt">' + myinfo + ' </div><img src="../images/00.png" alt=""></li>');
+      if (myinfo.length > 0) {
+        $('.sendBtn').show(200);
+      } else if (myinfo == '') {
+        mui.toast('内容不能为空哦');
+        return;
+      } else if (myinfo.length >= 300) {
+        mui.toast('内容太长啦');
+        return;
+      }
+      var tag = $('<li class="mysaid"><div class="mysaidTxt">' + myinfo +
+        ' </div><img src="../images/00.png" alt=""></li>');
 
-                $('.ChatRecordList').append(tag);
-                $('.ChatRecordList').val('');
-                $('#inputKeyboard').val("").focus(); // 清空并获得焦点
-                // 滚动条自动滚到最底部1
-                var h = $(document).height()-$(window).height();
-                $(document).scrollTop(h);
-                // //2
-                // $('.mui-content')[0].scrollTop =$('.mui-content')[0].scrollHeight;
-                // //3
-                // $('.mui-content').scrollTop( $('.mui-content')[0].scrollHeight );
-                // $('.ChatRecordList li:eq(0)').hide().slideDown(500);
-
-
-            });
-
-        });
-
-          $(function () {
-            $('#browList li a img').on('click',function(){
-                console.log(this);
-                // 获取src
-                var thisSrc = $(this).attr('src')
-                console.log(thisSrc);
-                // 赋值
-                // $(".thisImg").attr("src",thisSrc);
-
-                var tag = $('<li class="mysaid"><div class="mysaidImg">'+
-                                '<img class="thisImg" src="'+ thisSrc +'" alt=""></div>'+
-                                '<img src="https://743360298.github.io/2065.4.8/images/00.png" alt="">'+
-                            '</li>')
-                $('.ChatRecordList').append(tag);
-
-                // 滚动条自动滚到最底部
-                console.log('document'+$(document).height());
-                console.log('window'+$(window).height());
-                
-                var h = $(document).height()-$(window).height();
-                $(document).scrollTop(h);
+      $('.ChatRecordList').append(tag);
+      $('.ChatRecordList').val('');
+      $('#inputKeyboard').val("").focus(); // 清空并获得焦点
+      // 滚动条自动滚到最底部1
+      var h = $(document).height() - $(window).height();
+      $(document).scrollTop(h);
+      // //2
+      // $('.mui-content')[0].scrollTop =$('.mui-content')[0].scrollHeight;
+      // //3
+      // $('.mui-content').scrollTop( $('.mui-content')[0].scrollHeight );
+      // $('.ChatRecordList li:eq(0)').hide().slideDown(500);
 
 
-                //    $(".thisImg").html(
-                //     localStorage.getItem("thisImg")
+    });
 
-                // var src = this.attr('src');
-                // console.log(src);
-                
+  });
 
-                // html += '<li>'+
-                //         ' <a href="javascript:;" >'+
-                //             '<img src="'+ src +'" alt="">'+
-                //         '</a>'+
-                //         '</li>'
-                // // items.innerHTML = html;
-                // $('#browList').html(html);
+  $(function () {
+    $('#browList li a img').on('click', function () {
+      console.log(this);
+      // 获取src
+      var thisSrc = $(this).attr('src')
+      console.log(thisSrc);
+      // 赋值
+      // $(".thisImg").attr("src",thisSrc);
 
-                // 288268295127195
+      var tag = $('<li class="mysaid"><div class="mysaidImg">' +
+        '<img class="thisImg" src="' + thisSrc + '" alt=""></div>' +
+        '<img src="https://743360298.github.io/2065.4.8/images/00.png" alt="">' +
+        '</li>')
+      $('.ChatRecordList').append(tag);
 
-            })
-        })
+      // 滚动条自动滚到最底部
+      console.log('document' + $(document).height());
+      console.log('window' + $(window).height());
+
+      var h = $(document).height() - $(window).height();
+      $(document).scrollTop(h);
 
 
-          $('#SendPhoto').on('change',function(){
-        var filePath = $(this).val();         //获取到input的value，里面是文件的路径
-        // console.log(this.getAttribute("src"));  //获取的是图片的相对路径
-        var fileFormat = filePath.substring(filePath.lastIndexOf(".")).toLowerCase();
-        // console.log(filePath);
-        var src = window.URL.createObjectURL(this.files[0]); //转成可以在本地预览的格式
-        var newImgSrc = $('#cropedBigImg').attr('src',src);
-        // var srcImg =  $('#cropedBigImg').getAttribute("src")
+      //    $(".thisImg").html(
+      //     localStorage.getItem("thisImg")
 
-        // 判断盒子是否有图片
-        // var maskObj = $("cropedBigImg");
-        // var imgObjs = maskObj.children;
-        // if(ImgObj.fileSize > 0 || (ImgObj.width > 0 && ImgObj.height > 0)){
-        //     $('.sendBtn').fadeIn(100);
-        //    return true;
-        // } else {
-        //     $('.sendBtn').fadeOut(100);
-        //    return false;
-        // }
+      // var src = this.attr('src');
+      // console.log(src);
 
-        // function myFunction() {
-        //     alert('无法加载图片。');
-        // }
 
-        // function CheckImgExists(imgurl) {  
-        //     var ImgObj = new Image(); //判断图片是否存在  
-        //     ImgObj.src = imgurl;  
-        //     //没有图片，则返回-1  
-        //     if (ImgObj.fileSize > 0 || (ImgObj.width > 0 && ImgObj.height > 0)) {  
-        //         return true;  
-        //     } else {  
-        //         return false;
-        //     }  
-        // } 
+      // html += '<li>'+
+      //         ' <a href="javascript:;" >'+
+      //             '<img src="'+ src +'" alt="">'+
+      //         '</a>'+
+      //         '</li>'
+      // // items.innerHTML = html;
+      // $('#browList').html(html);
 
-        if($('#cropedBigImg').attr('src',src)){
-            $('.sendBtn').fadeIn(100);
-        }else{
-            $('.sendBtn').fadeOut(100);
-        }
-        
-        // 检查是否是图片
-        // if( !fileFormat.match(/.png|.jpg|.jpeg/) ) {
-        //     error_prompt_alert('上传错误,文件格式必须为：png/jpg/jpeg');
-        //     return;  
-        // }
-        // var src = window.URL.createObjectURL(this.files[0]); //转成可以在本地预览的格式
-        // $('#cropedBigImg').attr('src',src);
-        $('.sendBtn').on('click',function(){
-            var tag = $('<li class="mysaid"><div class="mysaidImg">'+
-                                '<img class="thisImg" src="'+ src +'" alt=""></div>'+
-                                '<img src="https://743360298.github.io/2065.4.8/images/00.png" alt="">'+
-                            '</li>')
-            $('.ChatRecordList').append(tag);
-
-            // 把图片清空    $(".thisImg").attr("src",thisSrc);
-            var newImgSrc = $('#cropedBigImg').attr('src','000');
-            if($('#cropedBigImg').attr('src','000')){
-                $('.sendBtn').fadeOut(100);
-            }else{
-                $('.sendBtn').fadeOut(100);
-            }
-            // 滚动条自动滚到最底部
-            console.log('document'+$(document).height());
-            console.log('window'+$(window).height());
-            var h = $(document).height()-$(window).height();
-            $(document).scrollTop(h);
-        })
-        
-        console.log($('#cropedBigImg').attr('src',src));
-        
-
+      // 288268295127195
 
     })
+  })
 
 
+  $('#SendPhoto').on('change', function () {
+    var filePath = $(this).val(); //获取到input的value，里面是文件的路径
+    // console.log(this.getAttribute("src"));  //获取的是图片的相对路径
+    var fileFormat = filePath.substring(filePath.lastIndexOf(".")).toLowerCase();
+    // console.log(filePath);
+    var src = window.URL.createObjectURL(this.files[0]); //转成可以在本地预览的格式
+    var newImgSrc = $('#cropedBigImg').attr('src', src);
+    // var srcImg =  $('#cropedBigImg').getAttribute("src")
+
+    // 判断盒子是否有图片
+    // var maskObj = $("cropedBigImg");
+    // var imgObjs = maskObj.children;
+    // if(ImgObj.fileSize > 0 || (ImgObj.width > 0 && ImgObj.height > 0)){
+    //     $('.sendBtn').fadeIn(100);
+    //    return true;
+    // } else {
+    //     $('.sendBtn').fadeOut(100);
+    //    return false;
+    // }
+
+    // function myFunction() {
+    //     alert('无法加载图片。');
+    // }
+
+    // function CheckImgExists(imgurl) {  
+    //     var ImgObj = new Image(); //判断图片是否存在  
+    //     ImgObj.src = imgurl;  
+    //     //没有图片，则返回-1  
+    //     if (ImgObj.fileSize > 0 || (ImgObj.width > 0 && ImgObj.height > 0)) {  
+    //         return true;  
+    //     } else {  
+    //         return false;
+    //     }  
+    // } 
+
+    if ($('#cropedBigImg').attr('src', src)) {
+      $('.sendBtn').fadeIn(100);
+    } else {
+      $('.sendBtn').fadeOut(100);
+    }
+
+    // 检查是否是图片
+    // if( !fileFormat.match(/.png|.jpg|.jpeg/) ) {
+    //     error_prompt_alert('上传错误,文件格式必须为：png/jpg/jpeg');
+    //     return;  
+    // }
+    // var src = window.URL.createObjectURL(this.files[0]); //转成可以在本地预览的格式
+    // $('#cropedBigImg').attr('src',src);
+    $('.sendBtn').on('click', function () {
+      var tag = $('<li class="mysaid"><div class="mysaidImg">' +
+        '<img class="thisImg" src="' + src + '" alt=""></div>' +
+        '<img src="https://743360298.github.io/2065.4.8/images/00.png" alt="">' +
+        '</li>')
+      $('.ChatRecordList').append(tag);
+
+      // 把图片清空    $(".thisImg").attr("src",thisSrc);
+      var newImgSrc = $('#cropedBigImg').attr('src', '000');
+      if ($('#cropedBigImg').attr('src', '000')) {
+        $('.sendBtn').fadeOut(100);
+      } else {
+        $('.sendBtn').fadeOut(100);
+      }
+      // 滚动条自动滚到最底部
+      console.log('document' + $(document).height());
+      console.log('window' + $(window).height());
+      var h = $(document).height() - $(window).height();
+      $(document).scrollTop(h);
+    })
+
+    console.log($('#cropedBigImg').attr('src', src));
+
+
+
+  })
 </script>
-
-

@@ -29,6 +29,26 @@ data = [
     distance:'../images/mipmap-xhdpi/icon_distance.png',
     distancenum:'20m',
   },
+  {
+    href: './couponsDetails.html',
+    circleImg: '../images/12-2.jpg',
+    circleTxtTop1:'肯德基',
+    circleTxtTop2:'单身狗套餐',
+    circleTxtTop3:'15元',
+    circleTxtTop4: '优惠券（满100元可用）',
+    distance:'../images/mipmap-xhdpi/icon_distance.png',
+    distancenum:'20m',
+  },
+  {
+    href: './couponsDetails.html',
+    circleImg: '../images/12-2.jpg',
+    circleTxtTop1:'肯德基',
+    circleTxtTop2:'单身狗套餐',
+    circleTxtTop3:'15元',
+    circleTxtTop4: '优惠券（满100元可用）',
+    distance:'../images/mipmap-xhdpi/icon_distance.png',
+    distancenum:'20m',
+  },
   
   
 ];
