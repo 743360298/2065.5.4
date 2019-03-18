@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="https://743360298.github.io/2065.4.7/css/mui.min.css">
+  <link rel="stylesheet" href="http://www.dcloud.io/hellomui/css/app.css">
+  <link rel="stylesheet" href="https://www.swiper.com.cn/dist/css/swiper.min.css">
+  <script src="../js/jquery-1.12.2.js"></script>
+  <script src="https://www.swiper.com.cn/dist/js/swiper.min.js"></script>
+
+  <script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+  <link href="../css/mui.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/head.css">
+  <link rel="stylesheet" href="../css/info1.css">
+  <link rel="stylesheet" href="../css/circle.css">
+  <script src="../js/public.js"></script>
+   <style>
+      .mui-content{
+            background-color: #f7f7f7;
+      }
+      #header {
+          z-index: 9999999999;
+      }
+      #foot{
+        height: 1rem ;
+        background-color: #f6f6f6;
+        background-color: #fff;
+        position: fixed ;
+        top: 0.88rem ;
+        left: 0 ;
+        display: flex ;
+        width: 100% ;
+    }
+    #foot span{
+        border-radius: 0!important;
+        width: 50%!important;
+        height: 100%!important ;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .swiper-container{
+      margin-top: 1rem;
+    }
+    .swiper-pagination-bullet{
+          /* width: 8px; */
+          /* height: 8px; */
+          /* display: inline-block; */
+          border-radius: 100%;
+          background: transparent;
+          opacity: 1;
+    }
+    .swiper-pagination-bullet-active{
+      color: #4EA3F9!important ;
+      position: relative;
+    }
+    .swiper-pagination-bullet-active::after{
+      content:"";display:block;clear:both;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 0.04rem;
+      width: 100%;
+      background-color: #4EA3F9;
+    }
+    /* .circleBoxTab{
+      height: 100vh;
+    } */
+    .circleBox {
+        display: block;
+    }
+  </style>
+</head>
+<body>
+    <header id="header" class="mui-bar mui-bar-nav">
+      <h1 class="mui-title">圈子</h1>
+      <button class="mui-action-back mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-right headImg2">
+          <img class="headImgTab headImgTab2 sjsetBtn" src="../images/mipmap-xhdpi/icon_set.png" alt="">
+          <img class="headImgTab addBtn" src="../images/mipmap-xhdpi/icon_edit.png" alt="">
+        </button>
+      <button class="mui-action-back mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-left headImg">
+        <img src="../images/00.png" alt="">
+      </button>
+    </header>
+
+    <div class="mui-content">
+      <!-- tab -->
+      <!-- <div class="circleTab">
+        <span class='circleTabSpan'>动态圈</span>
+        <span class="circleTabSpan circleTabActive">商家圈</span>
+      </div>   -->
+      <div class="swiper-pagination circleTab"  id="foot"></div>
+
+      <div class="swiper-container" id="conter">
+        <div class="swiper-wrapper">
+          <!-- <div class="swiper-slide" id="homeBox"> -->
+          <div class="swiper-slide Merchant">
+            <div class="circleBox circleBoxTab">
+              <ul class="circleList" >
+                <!-- <li>
+                  <a href="./couponsDetails.html">
+                    <div class="circleImg"><img src="../images/12-2.jpg" alt=""></div>
+                    <div class="circleTxt">
+                      <div class="circleTxtTop">
+                          <span>蜀客酸菜鱼（珠村店）</span>
+                          <span>元气二人餐</span>
+                          <span><i>15元</i>优惠券（满100元可用）</span>
+                      </div>
+                      <div class="circle-positioning">
+                          <img src="../images/mipmap-xhdpi/icon_distance.png" alt="">
+                          <span>20m</span>
+                      </div>
+                    </div>
+                  </a>
+                </li> -->
+               
+              </ul>
+             
+            </div>
+          </div>
+          <div class="swiper-slide Friend">
+            <div class="circleBox " id="pullrefresh">
+              <div class="mui-pull-top-pocket mui-block"><div class="mui-pull"><div class="mui-pull-loading mui-icon mui-icon-pulldown" style=""></div><div class="mui-pull-caption">下拉可以刷新</div></div></div>
+    
+              <ul class="dynamicList">
+                <li>
+                  <a href="javascript:;">
+                    <div class="friendinfo">
+                      <img class="friendImg" src="../images/12-1.jpg" alt="">
+                      <div class="friendTxt">
+                          <span class="friendName">哈士奇</span>
+                          <span class="friendTime">14:02</span>
+                      </div>
+                    </div>
+                    <div class="friendTalk">
+                      <p class="friendTalkTxt">是时候出去走走了,希望可以遇到朋友们</p>
+                      <ul class="TalkImgList1">
+                        <li><img src="../images/12-1.jpg" alt=""></li>
+                      </ul>
+    
+                      <!-- 点赞 评论-->
+                      <div class="commentBox">
+                        <div class="Point">
+                          <!-- 点赞 -->
+                            <div class="praise">
+                              <img class="likeBtn likeBtn2" src="../images/mipmap-xhdpi/icon_good.png" alt="">
+                              <img class="likeBtn " src="../images/mipmap-xhdpi/like.png" alt="">
+                              <span class="">点赞</span>
+                            </div>
+                            <!-- 评论 -->
+                            <div class="comment">
+                              <img class="commentImgBtn" src="../images/mipmap-xhdpi/icon_message.png" alt="">
+                              <span>评论</span>
+                            </div>
+                        </div>
+                        <!-- 有谁点了赞 -->
+                        <div class="friendPraise">
+                          <img class="friendLike" src="../images/mipmap-xhdpi/like.png" alt="">
+                          <span>萨摩耶</span>,
+                          <span>哈士奇</span>
+                        </div>
+                        <div class="friendComment">
+                          <ul class="commentList">
+                            <li>
+                                <span>小可爱：</span>
+                                <span>好的</span>
+                            </li>
+                            <li>
+                                <span>布偶猫</span>
+                                <span>回复</span>
+                                <span>小可爱</span>
+                                <span>来吧~嘻嘻嘻</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+    
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:;">
+                    <div class="friendinfo">
+                      <img class="friendImg" src="../images/12-1.jpg" alt="">
+                      <div class="friendTxt">
+                          <span class="friendName">哈士奇</span>
+                          <span class="friendTime">14:02</span>
+                      </div>
+                    </div>
+                    <div class="friendTalk">
+                      <p class="friendTalkTxt">是时候出去走走了,希望可以遇到朋友们</p>
+                      <ul class="TalkImgList2">
+                        <li><img src="../images/12-1.jpg" alt=""></li>
+                        <li><img src="../images/12-1.jpg" alt=""></li>
+                      </ul>
+    
+                      <!-- 点赞 评论-->
+                      <div class="commentBox">
+                        <div class="Point">
+                          <!-- 点赞 -->
+                            <div class="praise">
+                              <img class="likeBtn likeBtn2" src="../images/mipmap-xhdpi/icon_good.png" alt="">
+                              <img class="likeBtn " src="../images/mipmap-xhdpi/like.png" alt="">
+                              <span class="">点赞</span>
+                            </div>
+                            <!-- 评论 -->
+                            <div class="comment">
+                              <img class="commentImgBtn" src="../images/mipmap-xhdpi/icon_message.png" alt="">
+                              <span>评论</span>
+                            </div>
+                        </div>
+                        <!-- 有谁点了赞 -->
+                        <div class="friendPraise">
+                          <img class="friendLike" src="../images/mipmap-xhdpi/like.png" alt="">
+                          <span>萨摩耶</span>,
+                          <span>哈士奇</span>
+                        </div>
+                        <div class="friendComment">
+                          <ul class="commentList">
+                            <li>
+                                <span>小可爱：</span>
+                                <span>好的</span>
+                            </li>
+                            <li>
+                                <span>布偶猫</span>
+                                <span>回复</span>
+                                <span>小可爱</span>
+                                <span>来吧~嘻嘻嘻</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+    
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:;">
+                    <div class="friendinfo">
+                      <img class="friendImg" src="../images/12-1.jpg" alt="">
+                      <div class="friendTxt">
+                          <span class="friendName">哈士奇</span>
+                          <span class="friendTime">14:02</span>
+                      </div>
+                    </div>
+                    <div class="friendTalk">
+                      <p class="friendTalkTxt">是时候出去走走了,希望可以遇到朋友们</p>
+                      <ul class="TalkImgList3">
+                        <li><img src="../images/12-1.jpg" alt=""></li>
+                        <li><img src="../images/12-1.jpg" alt=""></li>
+                        <li><img src="../images/12-1.jpg" alt=""></li>
+                        <li><img src="../images/12-1.jpg" alt=""></li>
+                        <li><img src="../images/12-1.jpg" alt=""></li>
+                        <li><img src="../images/12-1.jpg" alt=""></li>
+                        <li><img src="../images/12-1.jpg" alt=""></li>
+                        <li><img src="../images/12-1.jpg" alt=""></li>
+                      </ul>
+    
+                      <!-- 点赞 评论-->
+                      <div class="commentBox">
+                        <div class="Point">
+                          <!-- 点赞 -->
+                            <div class="praise">
+                              <img class="likeBtn likeBtn2" src="../images/mipmap-xhdpi/icon_good.png" alt="">
+                              <img class="likeBtn " src="../images/mipmap-xhdpi/like.png" alt="">
+                              <span class="">点赞</span>
+                            </div>
+                            <!-- 评论 -->
+                            <div class="comment">
+                              <img class="commentImgBtn" src="../images/mipmap-xhdpi/icon_message.png" alt="">
+                              <span>评论</span>
+                            </div>
+                        </div>
+                        <!-- 有谁点了赞 -->
+                        <div class="friendPraise">
+                          <img class="friendLike" src="../images/mipmap-xhdpi/like.png" alt="">
+                          <span>萨摩耶</span>,
+                          <span>哈士奇</span>
+                        </div>
+                        <div class="friendComment">
+                          <ul class="commentList">
+                            <li>
+                                <span>小可爱：</span>
+                                <span>好的</span>
+                            </li>
+                            <li>
+                                <span>布偶猫</span>
+                                <span>回复</span>
+                                <span>小可爱</span>
+                                <span>来吧~嘻嘻嘻</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+    
+                    </div>
+                  </a>
+                </li>
+              </ul>
+    
+          </div>
+          </div>
+
+        </div>
+        <!-- Add Pagination -->
+    </div>
+
+
+
+<!-- 定位  -->
+<div class="circle-GPS">
+  <span></span>
+</div>
+
+      
+
+
+
+
+    </div>
+
+    <footer id="footer">
+      <ul class="footerList">
+        <li>
+          <a href="../information/info4.html">
+              <img src="..//images/mipmap-xhdpi/icon_message.png" alt="">
+              <span>消息</span>
+          </a>
+        </li>
+        <li>
+          <a href="../siyou/siyou.html">
+              <img src="..//images/mipmap-xhdpi/icon_friend.png" alt="">
+              <span>似友</span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:;" class="footActive">
+              <img src="..//images/mipmap-xhdpi/icon_onclick_dynamic.png"   alt="">
+              <span>圈子</span>
+          </a>
+        </li>
+      </ul>
+    </footer>
+      
+    <!-- 弹框 -->
+    <div class="circleBounced">
+        <ul class="bouncedList">
+          <li>餐饮</li>
+          <li>娱乐</li>
+          <li>查看全部</li>
+          <li class="cancel">取消</li>
+        </ul>
+      </div>
+
+
+    <!-- 遮罩层  -->
+    <div class="mui-popup-backdrop mui-active" style="display: none;"></div>
+
+</body>
+</html>
+<script src="../js/circle.js"></script>
+<script>
+  $('.circle-GPS').on('click',function(){
+    window.location.href = "./merchantsNav.html";
+  })
+</script>
+
+<script>
+// $('.circleTabSpan').on('click',function () {
+//   $(this).addClass('circleTabActive')
+//   $(this).siblings().removeClass('circleTabActive')
+//   $('.circleBox').toggleClass('circleBoxTab')
+//   $('.headImgTab').toggleClass('headImgTab2')
+//   // $('.headImg2').children().removeClass('circleBoxTab')
+//   // $('.circle-GPS').hide()
+// })
+
+// 判断TalkImgList的图片张数
+$('.TalkImgList li').on('click',function () {
+  console.log('22')
+})
+
+$(function () {
+  var TalkImgList =  $('.TalkImgList li');
+  for( var i=0 ; i<= TalkImgList.length ; i++ ){
+    console.log(TalkImgList.length);
+    
+  }
+})
+
+
+ // 商家圈弹框
+ $('.sjsetBtn').on('click',function () {
+    $('.mui-active').show()
+    $('.circleBounced').slideDown(200)
+  })
+  $('.mui-active').on('click',function () {
+    $('.mui-active').hide()
+    $('.circleBounced').slideUp(200)
+  })
+  $('.cancel').on('click',function () {
+    $('.mui-active').hide()
+    $('.circleBounced').slideUp(200)
+  })
+
+
+
+$('.setBtn').on('click',function () {
+  console.log('设置');
+})
+
+$('.addBtn').on('click',function () {
+  console.log('发表动态');
+  window.location.href = "../circle/publish.html";
+})
+
+
+// 点赞
+$('.praise').on('click',function () {
+  // $('.likeBtn').toggleClass('likeBtn2');
+  $(this).children().toggleClass('likeBtn2');
+  // $(this).parent().next().children().siblings('span').toggleClass('likeSpan');
+  // console.log($(this).parent().next().children().siblings('span'));
+  
+  // $(this).parent().next().toggle(',<span>金毛</span>')
+  
+  // 判断
+  console.log($(this).children().hasClass('likeBtn2'));
+
+  
+  if ($(this).children().hasClass('likeBtn2')) {
+      // $('.friendPraise').append(',<span>金毛</span>')
+       $(this).parent().next().append(',<span>金毛</span>')
+      //  console.log(this);
+       console.log('add');
+      // $(this).parent().next().toggle(',<span>金毛</span>')
+    }else{ 
+      $(this).parent().next().hide(',<span>金毛</span>')
+      console.log('pop');
+    }
+  
+  
+})
+
+// 评论
+$('.comment').on('click',function () {
+  console.log('评论');
+  $('.commentList ').append('<li><span>金毛：</span></li>')
+  
+})
+
+  // 获取动态圈的高度
+ var circleListHeight =  $(".circleList").innerHeight();
+console.log(circleListHeight);
+var num = circleListHeight/100;
+var newcircleListHeight = num + "rem";
+$(".Merchant").css("height",newcircleListHeight);
+
+var dynamicListHeight =  $(".dynamicList").innerHeight();
+console.log(dynamicListHeight);
+var num = dynamicListHeight/100;
+var newdynamicListHeight = num + "rem";
+$(".Friend").css("height",newdynamicListHeight);
+
+
+
+// $('.Friend').
+
+// 判断轮播图滑动
+$('.swiper-container').bind('touchstart',function(e){
+     startX = e.originalEvent.changedTouches[0].pageX,
+     startY = e.originalEvent.changedTouches[0].pageY;
+ });
+ $('.swiper-container').bind('touchend',function(e){
+    //  //获取滑动屏幕时的X,Y
+    //  endX = e.originalEvent.changedTouches[0].pageX,
+    //  endY = e.originalEvent.changedTouches[0].pageY;
+    //  //获取滑动距离
+    //  distanceX = endX-startX;
+    //  distanceY = endY-startY;
+    //  //判断滑动方向
+    //  if(Math.abs(distanceX)>Math.abs(distanceY) && distanceX>0){
+    //      console.log('往右滑动');
+    //  }else if(Math.abs(distanceX)>Math.abs(distanceY) && distanceX<0){
+    //      console.log('往左滑动');
+    //  }else if(Math.abs(distanceX)<Math.abs(distanceY) && distanceY<0){
+    //      console.log('往上滑动');
+    //  }else if(Math.abs(distanceX)<Math.abs(distanceY) && distanceY>0){
+    //      console.log('往下滑动');
+    //  }else{
+    //      console.log('点击未滑动');
+    //  } 
+
+      console.log(11111);
+      
+    if(!$('.Merchant').hasClass('swiper-slide-active')){
+        $('.circle-GPS').fadeIn(100)
+        return
+    }else{
+        $('.circle-GPS').fadeOut(100)
+        return
+    }
+
+
+});
+
+console.log($('.swiper-pagination-bullet'));
+
+$('#foot').on('touchend',function () {
+   if(!$('.Merchant').hasClass('swiper-slide-active')){
+        $('.circle-GPS').fadeIn()
+    }else{
+        $('.circle-GPS').fadeOut()
+    }
+
+})
+
+
+
+</script>
+
+<script>
+  window.onload=function(){
+      var header = $('#title').text();
+      console.log(header);
+
+      // var title = $('.swiper-pagination-bullet-active').text();
+      // console.log(title);
+  }
+</script>
+<script>
+var swiper = new Swiper('.swiper-container', {
+pagination: {
+  el: '.swiper-pagination',
+  clickable: true,
+  renderBullet: function (index, className) {
+     
+      return '<span class="' + className + '">' + (index + 1) + '</span>';
+
+  },
+  
+},
+});
+</script>
+<script>
+
+  window.onload=function(){
+      var title = $('.swiper-pagination-bullet-active').children().children().text();
+      // console.log($('.swiper-pagination-bullet-active').children().children());
+      // console.log('第'+title+'页');
+      var tab = $('#foot span').eq(0).text();
+      $('#foot span').eq(0).html("商家圈");
+      $('#foot span').eq(1).html("动态圈");
+  }
+
+
+</script>

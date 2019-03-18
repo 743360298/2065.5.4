@@ -1,0 +1,412 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/jquery-1.12.2.js"></script>
+  <script src="../js/mui.min.js"></script>
+  <link href="../css/mui.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/head.css">
+  <link rel="stylesheet" href="../css/info1.css">
+  <link rel="stylesheet" href="../css/circle.css">
+
+  <script src="../js/public.js"></script>
+
+   <style>
+      .mui-content{
+            background-color: #f7f7f7;
+      }
+      .mui-col-xs-4{
+        width: 50%;
+      }
+      .friendPraise .friendLike {
+          width: 0.28rem !important;
+          height: 0.28rem;
+      }
+
+      .mui-slider-group{
+        height: 700px;
+      }
+      #scroll1{
+        height: 700px;
+      }
+      #sliderSegmentedControl{
+        background-color: #fff;
+        box-shadow: 0px 2px 0 #efeff4;
+        position: fixed;
+        z-index: 9998;
+        height: 0.8rem;
+      }
+      #sliderProgressBar{
+        position: fixed;
+        z-index: 99999;
+        top: 1.7rem;
+       
+      }
+      .mui-slider .mui-slider-group{
+        margin-top: 0.86rem;
+      }
+      .mui-slider .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-group .mui-slider-item{
+        border-top: 0px solid #c8c7cc;
+        border-bottom: 0px solid #c8c7cc;
+      }
+      #sliderSegmentedControl a{
+        line-height: 0.8rem ;
+        font-size: 0.3rem;
+      }
+      .dynamicList{
+        margin-top: 0.3rem ;
+      }
+      .mui-slider-progress-bar{
+        height: 3px;
+      }
+  </style>
+</head>
+<body>
+    <header id="header" class="mui-bar mui-bar-nav">
+      <h1 class="mui-title">圈子</h1>
+      <button class=" mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-right headImg2">
+          <img class="headImgTab headImgTab2 sjsetBtn" src="../images/mipmap-xhdpi/icon_set.png" alt="">
+          <img class="headImgTab addBtn" src="../images/mipmap-xhdpi/icon_edit.png" alt="">
+        </button>
+      <button class=" mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-left headImg">
+        <img src="../images/00.png" alt="">
+      </button>
+    </header>
+
+    <div class="mui-content">
+        <div id="slider" class="mui-slider">
+            <div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+              <a class="mui-control-item mui-active" href="#item1mobile">
+            商家圈
+          </a>
+              <a class="mui-control-item" href="#item2mobile">
+            动态圈
+          </a>
+      
+            </div>
+            <div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-4"></div>
+            <div class="mui-slider-group">
+              <div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+                <div id="scroll1" class="mui-scroll-wrapper">
+                  <div class="mui-scroll">
+                   
+                      <ul class="circleList" >
+                          <!-- <li>
+                            <a href="./couponsDetails.html">
+                              <div class="circleImg"><img src="../images/12-2.jpg" alt=""></div>
+                              <div class="circleTxt">
+                                <div class="circleTxtTop">
+                                    <span>蜀客酸菜鱼（珠村店）</span>
+                                    <span>元气二人餐</span>
+                                    <span><i>15元</i>优惠券（满100元可用）</span>
+                                </div>
+                                <div class="circle-positioning">
+                                    <img src="../images/mipmap-xhdpi/icon_distance.png" alt="">
+                                    <span>20m</span>
+                                </div>
+                              </div>
+                            </a>
+                          </li> -->
+                         
+                        </ul>
+                
+                    
+
+                  </div>
+                </div>
+              </div>
+              <div id="item2mobile" class="mui-slider-item mui-control-content">
+                <div id="scroll2" class="mui-scroll-wrapper">
+                  <div class="mui-scroll">
+                    <div class="mui-loading">
+                      
+                        <ul class="dynamicList">
+                            <li>
+                              <a href="javascript:;">
+                                <div class="friendinfo">
+                                  <img class="friendImg" src="../images/12-1.jpg" alt="">
+                                  <div class="friendTxt">
+                                      <span class="friendName">哈士奇</span>
+                                      <span class="friendTime">14:02</span>
+                                  </div>
+                                </div>
+                                <div class="friendTalk">
+                                  <p class="friendTalkTxt">是时候出去走走了,希望可以遇到朋友们</p>
+                                  <ul class="TalkImgList1">
+                                    <li><img src="../images/12-1.jpg" alt=""></li>
+                                  </ul>
+                
+                                  <!-- 点赞 评论-->
+                                  <div class="commentBox">
+                                    <div class="Point">
+                                      <!-- 点赞 -->
+                                        <div class="praise">
+                                          <img class="likeBtn likeBtn2" src="../images/mipmap-xhdpi/icon_good.png" alt="">
+                                          <img class="likeBtn " src="../images/mipmap-xhdpi/like.png" alt="">
+                                          <span class="">点赞</span>
+                                        </div>
+                                        <!-- 评论 -->
+                                        <div class="comment">
+                                          <img class="commentImgBtn" src="../images/mipmap-xhdpi/icon_message.png" alt="">
+                                          <span>评论</span>
+                                        </div>
+                                    </div>
+                                    <!-- 有谁点了赞 -->
+                                    <div class="friendPraise">
+                                      <img class="friendLike" src="../images/mipmap-xhdpi/like.png" alt="">
+                                      <span>萨摩耶</span>,
+                                      <span>哈士奇</span>
+                                    </div>
+                                    <div class="friendComment">
+                                      <ul class="commentList">
+                                        <li>
+                                            <span>小可爱：</span>
+                                            <span>好的</span>
+                                        </li>
+                                        <li>
+                                            <span>布偶猫</span>
+                                            <span>回复</span>
+                                            <span>小可爱</span>
+                                            <span>来吧~嘻嘻嘻</span>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                
+                                </div>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="javascript:;">
+                                <div class="friendinfo">
+                                  <img class="friendImg" src="../images/12-1.jpg" alt="">
+                                  <div class="friendTxt">
+                                      <span class="friendName">哈士奇</span>
+                                      <span class="friendTime">14:02</span>
+                                  </div>
+                                </div>
+                                <div class="friendTalk">
+                                  <p class="friendTalkTxt">是时候出去走走了,希望可以遇到朋友们</p>
+                                  <ul class="TalkImgList2">
+                                    <li><img src="../images/12-1.jpg" alt=""></li>
+                                    <li><img src="../images/12-1.jpg" alt=""></li>
+                                  </ul>
+                
+                                  <!-- 点赞 评论-->
+                                  <div class="commentBox">
+                                    <div class="Point">
+                                      <!-- 点赞 -->
+                                        <div class="praise">
+                                          <img class="likeBtn likeBtn2" src="../images/mipmap-xhdpi/icon_good.png" alt="">
+                                          <img class="likeBtn " src="../images/mipmap-xhdpi/like.png" alt="">
+                                          <span class="">点赞</span>
+                                        </div>
+                                        <!-- 评论 -->
+                                        <div class="comment">
+                                          <img class="commentImgBtn" src="../images/mipmap-xhdpi/icon_message.png" alt="">
+                                          <span>评论</span>
+                                        </div>
+                                    </div>
+                                    <!-- 有谁点了赞 -->
+                                    <div class="friendPraise">
+                                      <img class="friendLike" src="../images/mipmap-xhdpi/like.png" alt="">
+                                      <span>萨摩耶</span>,
+                                      <span>哈士奇</span>
+                                    </div>
+                                    <div class="friendComment">
+                                      <ul class="commentList">
+                                        <li>
+                                            <span>小可爱：</span>
+                                            <span>好的</span>
+                                        </li>
+                                        <li>
+                                            <span>布偶猫</span>
+                                            <span>回复</span>
+                                            <span>小可爱</span>
+                                            <span>来吧~嘻嘻嘻</span>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                
+                                </div>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="javascript:;">
+                                <div class="friendinfo">
+                                  <img class="friendImg" src="../images/12-1.jpg" alt="">
+                                  <div class="friendTxt">
+                                      <span class="friendName">哈士奇</span>
+                                      <span class="friendTime">14:02</span>
+                                  </div>
+                                </div>
+                                <div class="friendTalk">
+                                  <p class="friendTalkTxt">是时候出去走走了,希望可以遇到朋友们</p>
+                                  <ul class="TalkImgList3">
+                                    <li><img src="../images/12-1.jpg" alt=""></li>
+                                    <li><img src="../images/12-1.jpg" alt=""></li>
+                                    <li><img src="../images/12-1.jpg" alt=""></li>
+                                    <li><img src="../images/12-1.jpg" alt=""></li>
+                                    <li><img src="../images/12-1.jpg" alt=""></li>
+                                    <li><img src="../images/12-1.jpg" alt=""></li>
+                                    <li><img src="../images/12-1.jpg" alt=""></li>
+                                    <li><img src="../images/12-1.jpg" alt=""></li>
+                                  </ul>
+                
+                                  <!-- 点赞 评论-->
+                                  <div class="commentBox">
+                                    <div class="Point">
+                                      <!-- 点赞 -->
+                                        <div class="praise">
+                                          <img class="likeBtn likeBtn2" src="../images/mipmap-xhdpi/icon_good.png" alt="">
+                                          <img class="likeBtn " src="../images/mipmap-xhdpi/like.png" alt="">
+                                          <span class="">点赞</span>
+                                        </div>
+                                        <!-- 评论 -->
+                                        <div class="comment">
+                                          <img class="commentImgBtn" src="../images/mipmap-xhdpi/icon_message.png" alt="">
+                                          <span>评论</span>
+                                        </div>
+                                    </div>
+                                    <!-- 有谁点了赞 -->
+                                    <div class="friendPraise">
+                                      <img class="friendLike" src="../images/mipmap-xhdpi/like.png" alt="">
+                                      <span>萨摩耶</span>,
+                                      <span>哈士奇</span>
+                                    </div>
+                                    <div class="friendComment">
+                                      <ul class="commentList">
+                                        <li>
+                                            <span>小可爱：</span>
+                                            <span>好的</span>
+                                        </li>
+                                        <li>
+                                            <span>布偶猫</span>
+                                            <span>回复</span>
+                                            <span>小可爱</span>
+                                            <span>来吧~嘻嘻嘻</span>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                
+                                </div>
+                              </a>
+                            </li>
+                          </ul>
+                    </div>
+                  </div>
+                </div>
+    
+              </div>
+      
+            </div>
+          </div>
+
+          <!-- 定位  -->
+          <div class="circle-GPS" id="circle-GPS">
+              <span></span>
+            </div>
+  
+       
+  
+      </div>
+
+    <footer id="footer">
+      <ul class="footerList">
+        <li>
+          <a href="../information/info4.html">
+              <img src="..//images/mipmap-xhdpi/icon_message.png" alt="">
+              <span>消息</span>
+          </a>
+        </li>
+        <li>
+          <a href="../siyou/siyou.html">
+              <img src="..//images/mipmap-xhdpi/icon_friend.png" alt="">
+              <span>似友</span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:;" class="footActive">
+              <img src="..//images/mipmap-xhdpi/icon_onclick_dynamic.png"   alt="">
+              <span>圈子</span>
+          </a>
+        </li>
+      </ul>
+    </footer>
+      
+    <!-- 弹框 -->
+    <div class="circleBounced">
+        <ul class="bouncedList">
+          <li>餐饮</li>
+          <li>娱乐</li>
+          <li>查看全部</li>
+          <li class="cancel">取消</li>
+        </ul>
+      </div>
+
+
+    <!-- 遮罩层  -->
+    <div class="mui-popup-backdrop mui-active" style="display: none;"></div>
+
+</body>
+</html>
+<script src="../js/circle.js"></script>
+<script>
+  $('.circle-GPS').on('click',function(){
+    window.location.href = "./merchantsNav.html";
+  })
+</script>
+
+<script>
+// $('.mui-slider-group')
+// $('#scroll1')
+
+			mui.init({
+				swipeBack: false
+			});
+			(function($) {
+				$('.mui-scroll-wrapper').scroll({
+					indicators: true //是否显示滚动条
+				});
+				// var html2 = '<ul class="mui-table-view"><li class="mui-table-view-cell">第二个选项卡子项-1</li><li class="mui-table-view-cell">第二个选项卡子项-2</li><li class="mui-table-view-cell">第二个选项卡子项-3</li><li class="mui-table-view-cell">第二个选项卡子项-4</li><li class="mui-table-view-cell">第二个选项卡子项-5</li></ul>';
+
+				var item2 = document.getElementById('item2mobile');
+				document.getElementById('slider').addEventListener('slide', function(e) {
+          if(e.detail.slideNumber === 0){
+            console.log(111);
+            console.log($('#circle-GPS'));
+            $('#circle-GPS').show()
+          }else if (e.detail.slideNumber === 1) {
+            console.log(222);
+            $('#circle-GPS').hide()
+						if (item2.querySelector('.mui-loading')) {
+							setTimeout(function() {
+                $('#circle-GPS').hide()
+								item2.querySelector('.mui-scroll').innerHTML = html2;
+							}, 500);
+            }
+            
+					} 
+				});
+				var sliderSegmentedControl = document.getElementById('sliderSegmentedControl');
+				$('.mui-input-group').on('change', 'input', function() {
+					if (this.checked) {
+						sliderSegmentedControl.className = 'mui-slider-indicator mui-segmented-control mui-segmented-control-inverted mui-segmented-control-' + this.value;
+						//force repaint
+						sliderProgressBar.setAttribute('style', sliderProgressBar.getAttribute('style'));
+					}
+				});
+			})(mui);
+
+</script>
+
+
+
+    

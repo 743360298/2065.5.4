@@ -88,7 +88,7 @@
           </a>
         </li>
         <li>
-          <a href="../circle/circle1.html">
+          <a href="../circle/circle3.html">
               <img src="..//images/mipmap-xhdpi/icon_dynamic.png" alt="">
               <span>圈子</span>
           </a>
@@ -143,14 +143,18 @@ $('.addBtn').on('click',function () {
   
   $('.addFriendBounced').show(200)
   $('.mui-active').show()
-  $(this).addClass('appliedBtn')
-  $(this).addClass('mui-btn-primary')
-  $(this).html('已申请')
+  // $(this).addClass('appliedBtn')
+  // $(this).addClass('mui-btn-primary')
+  // $(this).html('已申请')
+  thisAddBtn = $(this)
   
 })
 $('#sendBtn').on('click',function () {
   $('.addFriendBounced').hide(200)
   $('.mui-active').hide()
+  thisAddBtn.addClass('appliedBtn')
+  thisAddBtn.addClass('mui-btn-primary')
+  thisAddBtn.html('已申请')
 })
 
 
