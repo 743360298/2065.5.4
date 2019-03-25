@@ -9,12 +9,12 @@
   <script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
   <link href="../css/mui.min.css" rel="stylesheet" />
   
-  <link rel="stylesheet" href="./assets/css/site.css">
+  <!-- <link rel="stylesheet" href="./assets/css/site.css">
   <link rel="stylesheet" href="./assets/css/pygments.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="./assets/libs/toastr/toastr.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="./assets/css/fix.css">
-
+  <link rel="stylesheet" href="./assets/css/fix.css"> -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
   <link rel="stylesheet" href="../css/head.css">
   <link rel="stylesheet" href="../css/info1.css">
   <!-- <link rel="stylesheet" href="../css/info.css"> -->
@@ -31,7 +31,7 @@
         background-color: #fff;
       }
       body{
-        background-color: #fff;
+        background-color: #f8f8f8;
       }
       input{
         margin-bottom: 0;
@@ -45,6 +45,7 @@
         width: 100% ;
         position: relative;
         background-color: transparent;
+        background-color: #fff;
       }
       .searchTxt{
         /* display: flex ;
@@ -56,7 +57,25 @@
         color: #999 ;
         text-indent: 2.2em ;
         border-radius: 0.1rem ;
-        
+        margin: 0;
+        padding: 0;
+      }
+      input[type=search]{
+        background-color: #f3f3f3;
+        margin: 0;
+        padding: 0;
+      }
+      .mui-search{
+        width: 100% ;
+      }
+      .mui-search input[type=search]{
+        padding: 0;
+      }
+      .mui-search.mui-active:before{
+        top: 70% ;
+      }
+      .mui-input-row.mui-search .mui-icon-clear{
+        top: -13% ;
       }
       .searchImg{
         position: absolute;
@@ -65,7 +84,8 @@
         left: 0;
         transform: translate(85%,-50% );
       }
-      .cancelBtn{
+      .cancelBtn,.searchBtn{
+        /* color: #333 ; */
         padding: 0 0.2rem 0 0.4rem ;
         border: 0px solid transparent;
         font-size: 0.3rem ;
@@ -74,6 +94,7 @@
         background-color: #fff;
       }
       .more {
+        background-color: #fff;
         display: flex ;
       }
       .more li{
@@ -92,15 +113,136 @@
         justify-content: center;
         margin-top: 0.2rem ;
       }
+      .hotSearch ,.history{
+        background-color: #fff;
+        padding: 0 0.2rem 0.3rem;
+        margin-top: 0.2rem;
+        
+      }
+    
+      .hotSearch h2,.history h2{
+        color: #262626 ;
+        border-bottom: 1px solid #eee;
+        height: 1.2rem;
+        /* padding:0 0.2rem ; */
+        line-height: 1.2rem ;
+        font-size: 0.42rem;
+        font-weight: 500;
+      }
+      .history{
+        margin: 0;
+      }
+      .history h2{
+        margin: 0 !important;
+      }
+      .hotSearch ul{
+        display: flex ;
+        flex-wrap: wrap;
+      }
+      .hotSearch ul li {
+        padding: 0.2rem 0 0;
+        width: 50% ;
+        
+      }
+      .hotSearch ul li a{
+        display: flex ;
+        color: #333 ;
+      }
+      .hotSearch ul li a span{
+        line-height: initial;
+      }
+      .hotSearch ul li span:nth-child(1){
+        color: #777;
+        display: block;
+        width: 0.44rem;
+        height: 0.44rem;
+        text-align: center;
+        line-height: 0.44rem;
+        margin-right: 0.1rem;
+      }
+      .hotSearch ul li span:nth-child(2){
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+      }
+      .hotSearch ul li:nth-child(1) span:nth-child(1){
+        color: #fff ;
+        background-color: #eb2d2b;
+      }
+      .hotSearch ul li:nth-child(2) span:nth-child(1){
+        color: #fff ;
+        background-color: #ff6f28;
+      }
+      .hotSearch ul li:nth-child(3) span:nth-child(1){
+        color: #fff ;
+        background-color: #ff9a34;
+      }
+      .hotSearch ul li span:nth-child(2){
+        width: 80%;
+      }
+      .history>div{
+        /* border-bottom: 1px solid #eee; */
+        display: flex ;
+        align-items: center ;
+        justify-content: space-between;
+      }
+      .history h2{
+        border-bottom: 0px;
+        
+      }
+      .history>div i{
+        font-size: 0.44rem;
+        color: #b3b3b3 ;
+        /* margin-right: 0.1rem; */
+      }
+      .historyList li{
+        border-top: 1px solid #eee;
+        width: 100%;
+        height:0.8rem;
+      }
+
+      .historyList li a{
+        width: 100% ;
+        color: #b3b3b3;
+        font-size: 0.3rem ;
+        width: 100%;
+        height: 100%;
+        display: flex ;
+        justify-content: space-between;
+        align-items: center ;
+      }
+      .historyList li a span{
+        color: #333;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+      }
+      .historyList li a div{
+        width: 95% ;
+        display: flex ;
+      }
+      .historyList li a div i{
+        color: #b3b3b3 ;
+        margin-right: 0.1rem;
+      }
+      .mui-btn, button, input[type=button], input[type=reset], input[type=submit]{
+        padding: 0;
+        padding-right: 0.2rem;
+        color: #333;
+      }
   </style>
 </head>
 
 <body>
     <!-- 搜索框 -->
     <div class="search">
-      <input class="searchTxt" placeholder="搜索">
-      <img class="searchImg" src="../images/mipmap-xhdpi/icon_search.png" alt="">
-      <button type="button" class="cancelBtn">取消</button>
+      <!-- <input class="searchTxt" placeholder="搜索">
+      <img class="searchImg" src="../images/mipmap-xhdpi/icon_search.png" alt=""> -->
+      <button class="mui-action-back mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-left"><span class="mui-icon mui-icon-left-nav"></span></button>
+      <div class="mui-input-row mui-search">
+          <input type="search" class="mui-input-clear searchTxt" placeholder="搜索">
+      </div>
+      <button type="button" class="searchBtn">搜索</button>
     </div>
 
     <ul class="more">
@@ -111,6 +253,46 @@
       <li><i class="fa fa-feed" aria-hidden="true"></i><span>部落</span></li>
       <li><i class="fa fa-eye" aria-hidden="true"></i><span>看点</span></li>
     </ul>
+    
+    
+    <div class="hotSearch">
+      <h2>热搜</h2>
+      <ul class="hotSearchList">
+        <!-- <li>
+          <a href="javascript:;">
+            <span>1</span>
+            <span>前端</span>
+          </a>
+        </li> -->
+  
+      </ul>
+    </div>
+    <div class="history">
+      <div><h2>搜索纪录</h2><i class="fa fa-trash-o  EmptyBtn" aria-hidden="true"></i></div>
+      <!-- <i class="fa fa-history" aria-hidden="true"></i> -->
+      <ul class="historyList">
+        <li>
+          <a href="javascript:;">
+            <div>
+              <i class="fa fa-history" aria-hidden="true"></i>
+              <span>前端</span>
+            </div>
+            <i class="fa fa-close deleteBtn" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:;">
+            <div>
+              <i class="fa fa-history" aria-hidden="true"></i>
+              <span>前端2</span>
+            </div>
+            <i class="fa fa-close deleteBtn" aria-hidden="true"></i>
+          </a>
+        </li>
+  
+      </ul>
+    </div>
+
 
   
 </body>
@@ -129,4 +311,86 @@
     $(".more li").on("click",function () {
       mui.toast('敬请期待');
     })
+
+  </script>
+  <script src="../js/search.js"></script>
+  <script>
+    $('.hotSearchList li a').on('click',function () {      
+      // mui.toast('敬请期待');
+      var news = $(this).children("span:eq(1)").html()
+      console.log(news);
+      $('.searchTxt').focus();
+      $('.searchTxt').val(news);
+      $('.history').show(50)
+
+      var tag = $('<li><a href="javascript:;"><div><i class="fa fa-history" aria-hidden="true"></i>'+
+        '<span>' + news + '</span>'+
+      '</div><i class="fa fa-close deleteBtn" aria-hidden="true"></i></a></li>');
+      $('.historyList').prepend(tag);
+      $('.historyList li:eq(0)').hide().slideDown(100);
+    })
+
+
+    $(function(){
+        $('.searchBtn').click(function(event){
+             $('.history').show(100)
+            var weiboText = $('.searchTxt').val();
+            weiboText = $.trim(weiboText);
+            if(weiboText===''){
+              mui.toast('内容不能为空');
+                return;
+            }else if(weiboText.length>=150){
+              mui.toast('内容太长了');
+                return;
+            }
+            // var tag = $('<li><p>' + weiboText + '</p><span>删除</span></li>');
+            var tag = $('<li><a href="javascript:;"><div><i class="fa fa-history" aria-hidden="true"></i>'+
+              '<span>' + weiboText + '</span>'+
+            '</div><i class="fa fa-close deleteBtn" aria-hidden="true"></i></a></li>');
+            $('.historyList').prepend(tag);
+            $('.historyList li:eq(0)').hide().slideDown(100);
+            $('.searchTxt').val('');
+
+
+        });
+
+      // 删除
+      $(document).on('click','.deleteBtn',function () {      
+      // mui.toast('敬请期待');
+      console.log($(this).parent().parent());
+      $(this).parent().parent().slideUp(100,function(){
+                 $(this).remove();
+             })
+
+             var historyListLength = $('.historyList li').length
+             console.log(historyListLength);
+          if(historyListLength==1){
+            $('.history').slideUp(100,function(){
+                $(this).hide();
+            })
+          }
+      
+
+      }).on('click','.EmptyBtn',function () {      
+      // mui.toast('敬请期待');      
+      $('.historyList').children().remove()
+      $('.history').slideUp(100,function(){
+           $(this).hide();
+      })
+    })
+        
+             //回车键 键值 :13
+
+        // $(window).on('keydown',function(event){
+        //     if(event.keyCode === 13){
+        //         $('.weibo-btn').trigger('click');
+        //         event.preventDefault();
+        //     }
+        // });
+    });
+
+
+
+
+
   </script>

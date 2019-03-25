@@ -64,7 +64,7 @@
   <div class="bouncedSiyou" >
       <ul class="bouncedList">
         <li>拍照</li>
-        <li>从手机相册选择</li>
+        <li id="chooseAphoto">从手机相册选择</li>
         <li class="cancel">取消</li>
       </ul>
   </div>
@@ -136,7 +136,10 @@
     $('.bouncedSiyou').slideUp(200)
   })
 
-  
+  $('#chooseAphoto').on("click",function () {
+    console.log('chooseAphoto');
+    
+  })
   
   
   

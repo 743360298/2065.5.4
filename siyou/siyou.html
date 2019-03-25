@@ -147,7 +147,6 @@ $('.addBtn').on('click',function () {
   // $(this).addClass('mui-btn-primary')
   // $(this).html('已申请')
   thisAddBtn = $(this)
-  
 })
 $('#sendBtn').on('click',function () {
   $('.addFriendBounced').hide(200)
@@ -155,8 +154,11 @@ $('#sendBtn').on('click',function () {
   thisAddBtn.addClass('appliedBtn')
   thisAddBtn.addClass('mui-btn-primary')
   thisAddBtn.html('已申请')
+  if(thisAddBtn.hasClass('appliedBtn')){
+    thisAddBtn.attr('disabled',true);
+    // mui.toast('已申请');
+  }
 })
-
 
 
 
