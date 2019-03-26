@@ -22,7 +22,9 @@
   <script src="../js/mui.min.js"></script>
   <script src="../js/jquery-1.12.2.js"></script>
   <script src="../js/public.js"></script>
+  <script src="../js/title.js"></script>
   <!-- <script src="../js/delete.js"></script> -->
+
   <style>
     .mui-bar .mui-btn-nav.mui-pull-left .mui-icon-left-nav{
         color:#333 ;
@@ -237,6 +239,7 @@
 </head>
 
 <body>
+    <h1 class="mui-title" style="display: none ">搜索</h1>
     <!-- 搜索框 -->
     <div class="search">
       <!-- <input class="searchTxt" placeholder="搜索">
@@ -311,6 +314,10 @@
   <script>
     
     window.onload=function(){
+      var title = document.querySelector("title");
+      var titleTxt = $('.mui-title').text()
+      console.log(titleTxt);
+      title.innerHTML = titleTxt;
     // 判断是否为空
     var arr = localStorage.getItem("new") ? JSON.parse(localStorage.getItem("new")) : [];
       if(arr.length!=0){

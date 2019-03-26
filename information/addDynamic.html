@@ -146,11 +146,18 @@
 <script src="../js/picker/mui.poppicker.js"></script>
 <script src="../js/picker/mui.picker.js"></script>
 <script src="../js/ChatRecord.js"></script>
-
+<script src="../js/title.js"></script>
 
 </body>
 </html>
 <script>
+
+    window.onload=function(){
+        var title = document.querySelector("title");
+        var titleTxt = $('.mui-title').text()
+        console.log(titleTxt);
+        title.innerHTML = titleTxt;
+  }
 
 // 发表说说
 $("#dynamicTxt").blur(function(){

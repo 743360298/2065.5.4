@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="../css/PersonalInfo.css">
   <script src="../js/jquery-1.12.2.js"></script>
   <script src="../js/public.js"></script>
+  <script src="../js/title.js"></script>
   <link href="../js/picker/mui.picker.css" rel="stylesheet"/>
   <link href="../js/picker/mui.poppicker.css" rel="stylesheet"/>
   <style>
@@ -116,6 +117,10 @@
     }
 
       window.onload =function() {
+        var title = document.querySelector("title");
+        var titleTxt = $('.mui-title').text()
+        console.log(titleTxt);
+        title.innerHTML = titleTxt;
           $("#location").html(localStorage.getItem("lastname"));
       }
 

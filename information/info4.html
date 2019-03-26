@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="../css/menuBox.css">
   <script src="../js/mui.min.js"></script>
   <script src="../js/jquery-1.12.2.js"></script>
+  <script src="../js/title.js"></script>
   <script src="../js/public.js"></script>
   <script>
     mui('body').on('tap','a',function(){
@@ -476,6 +477,10 @@ $("#headImgSetBtn").on('tap',function () {
 })
 
 window.onload =function() {
+  var title = document.querySelector("title");
+  var titleTxt = $('.mui-title').text()
+  console.log(titleTxt);
+  title.innerHTML = titleTxt;
     // 地址
     $("#location").html(localStorage.getItem("lastname"));
     // 生日
@@ -490,6 +495,7 @@ window.onload =function() {
     $("#TalkAbout").val(localStorage.getItem("TalkAbout"));
     // 年龄
     $("#age").html(localStorage.getItem("age"+岁));
+
     
 }
 

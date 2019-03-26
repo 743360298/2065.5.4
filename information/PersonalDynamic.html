@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../css/PersonalInfo.css">
   <script src="../js/mui.min.js"></script>
   <script src="../js/jquery-1.12.2.js"></script>
+  <!-- <script src="../js/title.js"></script> -->
   <script src="../js/public.js"></script>
   <!-- <script src="../js/delete.js"></script> -->
    <style>
@@ -134,6 +135,15 @@
   </style>
 </head>
 <body>
+  <script>
+    
+    window.onload=function(){
+      var title = document.querySelector("title");
+      var titleTxt = $('.headerTxt').text()
+      console.log(titleTxt);
+      title.innerHTML = titleTxt;
+    }
+  </script>
 
 
     <header id="header" class="mui-bar mui-bar-nav">

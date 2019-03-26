@@ -232,7 +232,8 @@
 </body>
 </html>
 
-<script src="../js/PersonalInfo.js"></script>
+<!-- <script src="../js/PersonalInfo.js"></script> -->
+<script src="../js/title.js"></script>
 <script>
 
 
@@ -293,6 +294,10 @@ $("#TalkAbout").blur(function(){
   
   
 window.onload =function() {
+  var title = document.querySelector("title");
+  var titleTxt = $('.mui-title').text()
+  console.log(titleTxt);
+  title.innerHTML = titleTxt;
     // 地址
     // $("#location").html(localStorage.getItem("lastname"));
     var oldLocation = localStorage.getItem("lastname")||$('#location').text();  

@@ -7,7 +7,9 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
-  <link href="../css/mui.min.css" rel="stylesheet" />
+	<link href="../css/mui.min.css" rel="stylesheet" />
+	
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="../css/head.css">
   <link rel="stylesheet" href="../css/animate.css">
   <link rel="stylesheet" href="../css/info1.css">
@@ -22,17 +24,85 @@
     .mui-icon-back:before, .mui-icon-left-nav:before{
       color: #333 ;
     }
+		.setList {
+			
+		}
+		.setList ul li{
+			height: 1rem;
+			width: 100% ;
+			background-color: #fff;
+			padding: 0 0.25rem ;
+		}
+		.setList ul li a{
+			height: 100% ;
+			width: 100% ;
+			color: #333333 ;
+			font-size: 0.3rem ;
+			display: flex ;
+			align-items: center ;
+			justify-content: space-between;
+		}
+		.setList ul li a i{
+			font-size: 0.4rem ;
+		}
+		.setList ul li:first-child,.setList ul li:last-child{
+			margin: 0.25rem 0;
+		}
+		.setList ul li:nth-child(2) a{
+			border-bottom: 1px solid #eaeaea ;
+		}
+		.loginOutBtn{
+			width:7rem ;
+			height:1rem ;
+			background:rgba(78,163,249,1);
+			border-radius:0.1rem ;
+			font-size:  0.32rem ;
+			color: #FDFDFD ;
+			margin: 5rem  auto 0 !important;
+			position: absolute;
+			left: 50% ;
+			transform: translate(-50% );
+		}
     </style>
 </head>
 <body>
   <header id="header" class="mui-bar mui-bar-nav">
-    <h1 class="mui-title">个人信息</h1>
+    <h1 class="mui-title">设置</h1>
     <a class=" mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
   </header>
   
   <div class="mui-content">
-
-    <span>设置</span>
+		<div class="setList">
+			<ul>
+				<li>
+					<a href="./Safety.html">
+						<span>账号与安全</span>
+						<i class="fa fa-angle-right" aria-hidden="true"></i>
+					</a>
+				</li>
+				<li>
+					<a href="./NewMessage.html">
+						<span>新消息通知</span>
+						<i class="fa fa-angle-right" aria-hidden="true"></i>
+					</a>
+				</li>
+				<li>
+					<a href="./privacy.html">
+						<span>隐私</span>
+						<i class="fa fa-angle-right" aria-hidden="true"></i>
+					</a>
+				</li>
+				<li>
+					<a href="./Suggest.html">
+						<span>帮助与建议</span>
+						<i class="fa fa-angle-right" aria-hidden="true"></i>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<button type="button" class="mui-btn sign loginOutBtn mui-btn-primary">退出登录</button>
+		
+		
   </div>
   
   
@@ -83,7 +153,7 @@
 </script></body>
 </html>
 
-<script src="../js/PersonalInfo.js"></script>
+<script src="../js/title.js"></script>
 <script>
   
   
