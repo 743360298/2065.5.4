@@ -72,10 +72,10 @@
         padding: 0;
       }
       .mui-search.mui-active:before{
-        top: 70% ;
+        top: 73% ;
       }
       .mui-input-row.mui-search .mui-icon-clear{
-        top: -13% ;
+        top: -11% ;
       }
       .searchImg{
         position: absolute;
@@ -131,6 +131,7 @@
       }
       .history{
         margin: 0;
+        display: none ;
       }
       .history h2{
         margin: 0 !important;
@@ -180,6 +181,7 @@
       .hotSearch ul li span:nth-child(2){
         width: 80%;
       }
+      
       .history>div{
         /* border-bottom: 1px solid #eee; */
         display: flex ;
@@ -220,6 +222,7 @@
       .historyList li a div{
         width: 95% ;
         display: flex ;
+        align-items: center ;
       }
       .historyList li a div i{
         color: #b3b3b3 ;
@@ -239,8 +242,8 @@
       <!-- <input class="searchTxt" placeholder="搜索">
       <img class="searchImg" src="../images/mipmap-xhdpi/icon_search.png" alt=""> -->
       <button class="mui-action-back mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-left"><span class="mui-icon mui-icon-left-nav"></span></button>
-      <div class="mui-input-row mui-search">
-          <input type="search" class="mui-input-clear searchTxt" placeholder="搜索">
+      <div class="mui-input-row mui-search mui-input-search">
+          <input type="search" class="mui-input-clear searchTxt" placeholder="请输入搜索内容">
       </div>
       <button type="button" class="searchBtn">搜索</button>
     </div>
@@ -271,24 +274,15 @@
       <div><h2>搜索纪录</h2><i class="fa fa-trash-o  EmptyBtn" aria-hidden="true"></i></div>
       <!-- <i class="fa fa-history" aria-hidden="true"></i> -->
       <ul class="historyList">
-        <li>
+        <!-- <li>
           <a href="javascript:;">
-            <div>
+            <div  class="onlyNews">
               <i class="fa fa-history" aria-hidden="true"></i>
               <span>前端</span>
             </div>
             <i class="fa fa-close deleteBtn" aria-hidden="true"></i>
           </a>
-        </li>
-        <li>
-          <a href="javascript:;">
-            <div>
-              <i class="fa fa-history" aria-hidden="true"></i>
-              <span>前端2</span>
-            </div>
-            <i class="fa fa-close deleteBtn" aria-hidden="true"></i>
-          </a>
-        </li>
+        </li> -->
   
       </ul>
     </div>
@@ -315,64 +309,194 @@
   </script>
   <script src="../js/search.js"></script>
   <script>
-    $('.hotSearchList li a').on('click',function () {      
-      // mui.toast('敬请期待');
-      var news = $(this).children("span:eq(1)").html()
-      console.log(news);
-      $('.searchTxt').focus();
-      $('.searchTxt').val(news);
-      $('.history').show(50)
+    
+    window.onload=function(){
+    // 判断是否为空
+    var arr = localStorage.getItem("new") ? JSON.parse(localStorage.getItem("new")) : [];
+      if(arr.length!=0){
+        $('.history').show()
+      }
+    }
+   
 
-      var tag = $('<li><a href="javascript:;"><div><i class="fa fa-history" aria-hidden="true"></i>'+
-        '<span>' + news + '</span>'+
-      '</div><i class="fa fa-close deleteBtn" aria-hidden="true"></i></a></li>');
-      $('.historyList').prepend(tag);
-      $('.historyList li:eq(0)').hide().slideDown(100);
-    })
+
+
+
 
 
     $(function(){
+
+      renderHtml();
+
         $('.searchBtn').click(function(event){
              $('.history').show(100)
-            var weiboText = $('.searchTxt').val();
-            weiboText = $.trim(weiboText);
-            if(weiboText===''){
+            var searchText = $('.searchTxt').val();
+            // 去两边的空格
+            searchText = $.trim(searchText);
+            if(searchText===''){
               mui.toast('内容不能为空');
                 return;
-            }else if(weiboText.length>=150){
+            }else if(searchText.length>=150){
               mui.toast('内容太长了');
                 return;
             }
-            // var tag = $('<li><p>' + weiboText + '</p><span>删除</span></li>');
-            var tag = $('<li><a href="javascript:;"><div><i class="fa fa-history" aria-hidden="true"></i>'+
-              '<span>' + weiboText + '</span>'+
-            '</div><i class="fa fa-close deleteBtn" aria-hidden="true"></i></a></li>');
-            $('.historyList').prepend(tag);
-            $('.historyList li:eq(0)').hide().slideDown(100);
-            $('.searchTxt').val('');
+  
+          
+          if (!searchText) {
+            return;
+          }
+
+           var arr = localStorage.getItem("new") ? JSON.parse(localStorage.getItem("new")) : [];
+
+
+          // 去重 循环数组
+          // 找到了和数组中的某一项值的相等 删除掉数组中的值 
+          for (var i = 0; i < arr.length; i++) {
+            if (arr[i] == searchText) {
+              // 删除数组中的一个值
+              // splice(从哪里开始删除，删除几个)
+              arr.splice(i, 1);
+              break;
+            }
+          }
+
+          // 把输入框的值存入到数组中
+          // push 把一个值插入到数组的末尾
+          // unshift 把值插入到数组的头部
+          arr.unshift(searchText);
+          // 把数组存入到本地存储中
+          localStorage.setItem("new", JSON.stringify(arr));
+
+          renderHtml();
+          $('.searchTxt').val('');
 
 
         });
 
+    $('.hotSearchList li a').on('click',function () {      
+      // mui.toast('敬请期待');
+      var news = $(this).children("span:eq(1)").html()
+      console.log(news);
+      $('.searchTxt').val(news);
+      $('.searchTxt').focus();
+      $('.history').show()
+
+
+        if (!news) {
+            return;
+          }
+
+           var arr = localStorage.getItem("new") ? JSON.parse(localStorage.getItem("new")) : [];
+
+
+          // 去重 循环数组
+          // 找到了和数组中的某一项值的相等 删除掉数组中的值 
+          for (var i = 0; i < arr.length; i++) {
+            if (arr[i] == news) {
+              // 删除数组中的一个值
+              // splice(从哪里开始删除，删除几个)
+              arr.splice(i, 1);
+              break;
+            }
+          }
+
+          // 把输入框的值存入到数组中
+          // push 把一个值插入到数组的末尾
+          // unshift 把值插入到数组的头部
+          arr.unshift(news);
+          // 把数组存入到本地存储中
+          localStorage.setItem("new", JSON.stringify(arr));
+          renderHtml();
+          
+
+    })
+
+          // 渲染数据 
+  function renderHtml() {
+    // 获取本地存储中的数组
+    var arr = localStorage.getItem("new") ? JSON.parse(localStorage.getItem("new")) : [];
+    // console.log(arr);
+    
+    // 拼接li标签
+    var html = "";
+    $('.historyList').html('')
+    for (var i = 0; i < arr.length; i++) {
+      // console.log(arr[i]);
+      // console.log(arr.length);
+      
+      html += '<li><a href="javascript:;"><div class="onlyNews"><i class="fa fa-history" aria-hidden="true"></i>'+
+              '<span>' + arr[i] + '</span>'+
+            '</div><i class="fa fa-close deleteBtn" aria-hidden="true"></i></a></li>';
+
+      }
+
+    // $(".historyList").innerHTML = html;
+    $('.historyList').prepend(html);
+    $('.historyList li:eq(0)').hide().slideDown(100);
+    // $('.searchTxt').val('');
+  }
+
+
+
       // 删除
       $(document).on('click','.deleteBtn',function () {      
-      // mui.toast('敬请期待');
-      console.log($(this).parent().parent());
-      $(this).parent().parent().slideUp(100,function(){
+          // mui.toast('敬请期待');
+          // console.log($(this).parent().parent());
+
+           // 删除本地存储指定项 
+           var thisNews = $(this).prev().children('span').text()
+          console.log(thisNews);
+          var arr = localStorage.getItem("new") ? JSON.parse(localStorage.getItem("new")) : [];
+          console.log(arr);
+          
+          Array.prototype.indexOf = function(aa) { 
+            console.log(aa);
+            for (var i = 0; i < this.length; i++) { 
+              if (this[i] == aa) return i; 
+            } 
+            return -1; 
+          };
+          Array.prototype.remove = function(aa) { 
+            var index = this.indexOf(aa); 
+              if (index > -1) { 
+                 this.splice(index, 1); 
+              } 
+          };
+
+        var arr = localStorage.getItem("new") ? JSON.parse(localStorage.getItem("new")) : [];
+        arr.remove(thisNews);
+        console.log(arr);
+
+
+          $(this).parent().parent().slideUp(100,function(){
                  $(this).remove();
              })
 
-             var historyListLength = $('.historyList li').length
-             console.log(historyListLength);
+          var historyListLength = $('.historyList li').length
+          // console.log(historyListLength);
           if(historyListLength==1){
             $('.history').slideUp(100,function(){
                 $(this).hide();
             })
           }
+
+         
+        //  arr.unshift(news);
+          // 把数组存入到本地存储中
+          localStorage.setItem("new", JSON.stringify(arr));
+          renderHtml();
+        
+
+          
+          
+
       
 
       }).on('click','.EmptyBtn',function () {      
-      // mui.toast('敬请期待');      
+      // mui.toast('敬请期待');  
+       // 清空搜索列表
+       localStorage.removeItem('new');
+      // console.log(localStorage.getItem('new'));        
       $('.historyList').children().remove()
       $('.history').slideUp(100,function(){
            $(this).hide();
@@ -381,12 +505,12 @@
         
              //回车键 键值 :13
 
-        // $(window).on('keydown',function(event){
-        //     if(event.keyCode === 13){
-        //         $('.weibo-btn').trigger('click');
-        //         event.preventDefault();
-        //     }
-        // });
+        $(window).on('keydown',function(event){
+            if(event.keyCode === 13){
+                $('.searchBtn').trigger('click');
+                event.preventDefault();
+            }
+        });
     });
 
 

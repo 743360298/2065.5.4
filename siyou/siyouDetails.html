@@ -37,7 +37,7 @@
       <button class="setBtn  mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-right headImg2">
           <img src="../images/mipmap-xhdpi/icon_set.png" alt="">
         </button>
-        <a class=" mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+        <a  class=" mui-action-back mui-icon mui-icon-left-nav mui-pull-left backBtn"></a>
       <!-- <button class="mui-action-back mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-left headImg">
         <img src="../images/00.png" alt="">
       </button> -->
@@ -191,6 +191,10 @@ $('.lineTab').on('click',function () {
 // 跳转到修改备注dataSet
 $('.dataSet').on('click',function () {
   window.location.href = "./dataSet.html";
+})
+// 返回上一页
+$('.backBtn').on('click',function () {
+  window.location.href = "./siyou.html";
 })
 
 
